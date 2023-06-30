@@ -12,9 +12,17 @@
         justify-content: center;
         border-radius: 9999px;
         align-items: center;
-        background-color: white;
+        background-color: var(--foreground);
         padding: 4px;
         overflow: hidden;
+
+        
+        @media screen and (max-width: 1200px) {
+            // ? A retirer:
+            margin-top: 2em;
+            width: 200px;
+            height: 200px;
+        }
 
         img {
             display: flex;
@@ -26,7 +34,6 @@
         &:after {
             content: '';
             position: absolute;
-            background-color: red;
             z-index: -1;
         }
     }
@@ -35,12 +42,12 @@
         display: flex;
         margin-top: 1em;
         font-size: 40px;
-        color: var(--color);
+        color: var(--foreground);
     }
 
     h2.presentation {
         margin-top: 1.5em;
-        color: var(--color);
+        color: var(--foreground);
         font-size: 24px;
     }
     
@@ -76,12 +83,8 @@
             figure {
                 display: flex;
                 height: 78%;
-                fill: var(--color);
+                fill: var(--foreground);
             }
         }
     }
-}
-
-@media screen and (max-width: 1200px) {
-    .Testimonials {}
 }

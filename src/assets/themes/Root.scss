@@ -4,10 +4,12 @@
     --brad-default: 4px;
     --grid-gap: 32px;
 
+    --desktop: 1200px;
+
     *[color-scheme="dark"] {
         --background: #222831;
         --background-alt: #393e46;
-        --color: #fff;
+        --foreground: #fff;
         --invertedBackground: #cfc59c;
     }
 
@@ -15,19 +17,19 @@
     *[color-scheme="light"] {
         --background: #fbf0c6;
         --background-alt: #cfc59c;
-        --color: #3c3836;
+        --foreground: #3c3836;
         --invertedBackground: #222831;
     }
 
     @media (prefers-color-scheme: light) {
         --background: #fbf0c6;
         --background-alt: #cfc59c;
-        --color: #3c3836;
+        --foreground: #3c3836;
     }
 
     @media (prefers-color-scheme: dark) {
         --background: #222831;
         --background-alt: #393E46;
-        --color: #fff;
+        --foreground: #fff;
     }
 }
