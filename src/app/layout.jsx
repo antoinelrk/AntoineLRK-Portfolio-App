@@ -1,6 +1,5 @@
 import '../assets/themes/App.scss'
-import NavLink from '../components/UI/NavLink/NavLink.jsx'
-import NavButton from '../components/UI/NavButton/NavButton.jsx'
+import Link from 'next/link'
 
 export const metadata = {
     title: 'AntoineLRK — Backend developer',
@@ -16,9 +15,19 @@ export default function RootLayout({children}) {
                         <div className="app-name">antoine<span>.</span>lrk</div>
                         <nav>
                             <ul>
-                                <li><NavLink url="/" name="Home"/></li>
-                                <li><NavLink url="/about" name="About"/></li>
-                                <li><NavButton /></li>
+                                <li><Link class="NavLink" href="/">Home</Link></li>
+                                <li><Link class="NavLink" href="/about">About</Link></li>
+                                <li>
+                                    <button class="ToggleTheme">
+                                        <div class="toggle-theme-icon">
+                                            <figure>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
+                                                    <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                                </svg>
+                                            </figure>
+                                        </div>
+                                    </button>
+                                </li>
                             </ul>
                         </nav>
                     </header>
