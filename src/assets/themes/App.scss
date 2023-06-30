@@ -1,40 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import './Normalize.scss';
+@import './Root.scss';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+::selection {
+    background-color: var(--tonic);
 }
 
-ul li {
-    list-style-type: none;
+body::-webkit-scrollbar {
+    width: 11px;
 }
 
-a, a:hover, a:active, a:visited, a:focus {
-    text-decoration: none;
-    color: white;
-    outline: none;
+body::-webkit-scrollbar-track {
+    background-color: var(--background);
 }
 
-button {
-    background-color: inherit;
-}
-
-:root {
-    --background: #222831;
-    --background-alt: #393e46;
-
-    --color: #fff;
-    --tonic: #00ADB5;
-
-    --brad-default: 4px;
-    --grid-gap: 32px;
-
-    --tv: 1900px;
-    --desktop: 1200px;
-    --tablet: 900px;
-    --phone: 450px;
+body::-webkit-scrollbar-thumb {
+    background-color: var(--background-alt);
+    border: solid 4px var(--background);
+    border-radius: 999px;
+    cursor: pointer;
 }
 
 body {
@@ -43,6 +27,7 @@ body {
     width: 100%;
     height: 100%;
     font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
 
     #app {
         display: flex;
@@ -98,6 +83,7 @@ body {
                             background-color: transparent;
                             font-weight: 500;
                             user-select: none;
+                            color: var(--color);
                         
                             &:focus {
                                 outline-width: 3px;
@@ -120,7 +106,7 @@ body {
                             width: 32px;
                             border-radius: 4px;
                             border: none;
-                            color: white;
+                            color: var(--color);
                             cursor: pointer;
                             transition: background-color .25s ease;
                             background-color: transparent;
