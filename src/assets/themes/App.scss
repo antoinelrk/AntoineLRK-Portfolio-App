@@ -28,13 +28,15 @@ body {
     height: 100%;
     font-size: 16px;
     font-family: 'DM Sans', sans-serif;
+    background-color: var(--background);
+    align-items: center;
 
     #app {
         display: flex;
         flex-direction: column;
         width: 100%;
+        max-width: 1200px;
         min-height: 100vh;
-        background-color: var(--background);
         align-items: center;
 
         header {
@@ -49,7 +51,7 @@ body {
             .app-name {
                 font-size: 32px;
                 font-weight: 600;
-                color: var(--color);
+                color: var(--foreground);
                 user-select: none;
 
                 span {
@@ -83,7 +85,7 @@ body {
                             background-color: transparent;
                             font-weight: 500;
                             user-select: none;
-                            color: var(--color);
+                            color: var(--foreground);
                         
                             &:focus {
                                 outline-width: 3px;
@@ -106,7 +108,7 @@ body {
                             width: 32px;
                             border-radius: 4px;
                             border: none;
-                            color: var(--color);
+                            color: var(--foreground);
                             cursor: pointer;
                             transition: background-color .25s ease;
                             background-color: transparent;
@@ -134,7 +136,7 @@ body {
                                     display: flex;
                                     width: 14px;
                                     height: 14px;
-                                    fill: var(--color);
+                                    fill: var(--foreground);
                                 }
                             }
                         
