@@ -7,15 +7,26 @@
 
     h2.sectionTitle {
         color: var(--tonic);
-        font-size: 40px;
+        font-size: 1.6em;
+        user-select: none;
+        
+        @media screen and (max-width: 450px) {
+            font-size: 1.2em;
+        }
     }
 
     p {
         margin-top: 12px;
-        font-size: 2em;
-        line-height: 56px;
+        font-size: 1.2em;
+        line-height: 2em;
         color: var(--foreground);
         font-weight: 400;
         font-family: 'DM Sans', sans-serif;
+
+        @media screen and (max-width: 450px) {
+            padding: 0 1em;
+            font-size: 1em;
+            line-height: 1.8em;
+        }
     }
 }
