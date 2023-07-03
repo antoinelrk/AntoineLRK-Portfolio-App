@@ -40,7 +40,7 @@ function RootLayout({children}) {
             <body>
                 <div id="app">
                     <header>
-                        <div className="app-name">antoine<span>.</span>lrk</div>
+                        <div className="app-name">Antoine LRK</div>
                         <nav>
                             <ul>
                                 <li><Link className="NavLink" href="/">Home</Link></li>

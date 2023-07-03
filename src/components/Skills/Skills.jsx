@@ -28,10 +28,19 @@ export default function Skills () {
             <span style={{color: xp.color}}>{xp.name}</span>
         </li>
     ))
-
     return (
         <section className={Style.Skills}>
             <h2 className={Style.sectionTitle}>Compétences</h2>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 160 160" width="100px" height="100px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round"/>
+            </svg>
 
             <article className={Style.skillsSection}>
                 <h3 className={Style.subSectionTitle}>— Ce que je maîtrise —</h3>

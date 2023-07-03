@@ -1,18 +1,17 @@
 section.Skills {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 2em;
+    background-color: #9ec260;
 
-    h2.sectionTitle {
-        color: var(--tonic);
-        font-size: 1.6em;
-        user-select: none;
-        text-transform: uppercase;
-        
-        @media screen and (max-width: 450px) {
-            font-size: 1.2em;
-        }
+    /**
+     * stroke-dasharray - stroke-dasharray x percent (0.65)
+     */
+    svg circle {
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: .8em;
+        stroke-dasharray: 472; // 472
+        stroke-dashoffset: calc(472 - 472 * .50);
     }
 
     article.skillsSection {
