@@ -7,70 +7,91 @@ section.Educations {
     article.card {
         position: relative;
         display: flex;
-        flex-direction: column;
         width: 100%;
-        padding: 1em 2em;
+        padding: 1em 2em 1.5em 2em;
         border: solid 3px var(--background-alt);
         border-radius: 8px;
         color: var(--foreground);
         font-family: 'DM Sans', sans-serif;
         font-weight: 500;
-        transition: background-color .15s ease-in-out;
 
-        &:hover {
-            background-color: var(--background-alt);
-            transition: background-color .15s ease-in-out;
+        article.cardContent {
+            display: flex;
+            flex-direction: column;
+            
+            p {
+                display: flex;
+                margin-top: .8em;
+                column-gap: .2em;
+
+                &.metadata {
+                    color: var(--foreground-alt);
+                }
+
+                &.description {
+                    color: var(--foreground);
+                    font-weight: 400;
+                    font-size: 1.2em;
+                    max-width: 75%;
+                }
+
+                i {
+                    text-transform: none;
+                    color: var(--tonic);
+                }
+
+                span {
+                    color: var(--foreground);
+                }
+            }
+
+            a.educationsCertificationLink {
+                display: flex;
+                margin: 3em 0 0 0;
+                width: 128px;
+                padding: .5em 1em;
+                background-color: var(--background-alt);
+                border-radius: 4px;
+                transition: background-color .15s ease-in-out;
+                border: none;
+    
+                &:hover {
+                    background-color: var(--tonic);
+                    transition: background-color .15s ease-in-out;
+                }
+            }
         }
 
+        aside.companyBrand {
+            a.educationsCompanyLink {
+                display: flex;
+                position: relative;
+                bottom: -50px;
+                right: 50px;
+                width: 200px;
+                height: 200px;
+                border-radius: 4px;
+                overflow: hidden;
+                border: none;
+                transform: scale(1);
+                transition: transform .25s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: transform .25s ease-in-out;
+                }
+                
+                img.educationsCompanyLogo {
+                    display: flex;
+                    width: 100%;
+                    object-position: center center;
+                    object-fit: cover;
+                }
+            }
+        }
+        
         h3.cardTitle {
             font-size: 2.8em;
         }
-
-        p {
-            display: flex;
-            margin-top: .8em;
-            column-gap: .2em;
-            color: var(--foreground-alt);
-
-            i {
-                text-transform: none;
-                color: var(--tonic);
-            }
-
-            span {
-                color: var(--foreground);
-            }
-        }
-
-        a.educationsCertificationLink {
-            display: flex;
-            margin: 3em auto 0 0;
-            padding: .5em 1em;
-            border: 2px solid var(--background);
-            background-color: var(--background-alt);
-            border-radius: 4px;
-            transition:
-                border-color .15s ease-in-out,
-                background-color .15s ease-in-out;
-
-            &:hover {
-                background-color: var(--tonic);
-                border-color: var(--tonic);
-                transition:
-                    border-color .15s ease-in-out,
-                    background-color .15s ease-in-out;
-            }
-        }
-
-        img.educationsCompanyLogo {
-            position: absolute;
-            bottom: -50px;
-            right: 50px;
-            width: 200px;
-            height: 200px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
     }
 }

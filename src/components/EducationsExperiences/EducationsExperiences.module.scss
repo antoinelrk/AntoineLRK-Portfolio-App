@@ -29,10 +29,6 @@ section.EducationsExperiences {
             color: var(--foreground);
             font-family: 'DM Sans', sans-serif;
 
-            &.active {
-                border-color: var(--tonic);
-                background-color: var(--background-alt);
-            }
             &:focus {
                 border-color: var(--tonic);
                 background-color: var(--background-alt);

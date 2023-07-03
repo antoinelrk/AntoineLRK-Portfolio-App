@@ -34,6 +34,11 @@ button {
     background-color: inherit;
     cursor: pointer;
     border: none;
+    
+    &.active {
+        border: solid 2px var(--tonic) !important;
+        background-color: var(--background-alt);
+    }
 }
 
 i {
