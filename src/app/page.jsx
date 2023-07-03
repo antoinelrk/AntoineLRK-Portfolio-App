@@ -1,5 +1,6 @@
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Manifest from "@/components/Manifest/Manifest"
+import EducationsExperiences from "@/components/EducationsExperiences/EducationsExperiences";
 
 export default function Home () {
     return (
@@ -7,7 +8,7 @@ export default function Home () {
             {/* Section: Model3D */}
             <Testimonials />
             <Manifest />
-            {/* Section: Formations */}
+            <EducationsExperiences />
             {/* Section: Projects */}
             {/* Section: Contact */}
         </main>
