@@ -16,6 +16,14 @@
         padding: 4px;
         overflow: hidden;
 
+        
+        @media screen and (max-width: 1200px) {
+            // ? A retirer:
+            margin-top: 2em;
+            width: 200px;
+            height: 200px;
+        }
+
         img {
             display: flex;
             width: 100%;
