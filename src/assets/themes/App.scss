@@ -113,6 +113,13 @@ body {
                             transition: background-color .25s ease;
                             background-color: transparent;
                         
+                            &:focus {
+                                outline-width: 3px;
+                                outline-color: var(--tonic);
+                                outline-style: solid;
+                                outline-offset: 0;
+                            }
+
                             &:active {
                                 .toggle-theme-icon {
                                     transform: scale(.9);
