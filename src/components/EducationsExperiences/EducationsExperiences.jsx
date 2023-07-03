@@ -22,14 +22,18 @@ const TabContent = ({ tabType }) => {
 export default function EducationsExperiences () {
     const [activeTab, setActiveTab] = useState(`educations`)
 
-    const toggleTab = (value) => setActiveTab(value)
+    const toggleTab = (event, value) => {
+        document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
+        event.target.classList.add('active')
+        setActiveTab(value)
+    }
 
     return (
         <section className={Style.EducationsExperiences}>
             <h2 className={Style.sectionTitle}>FORMATIONS & EXPÉRIENCES</h2>
             <div className={Style.tabsControls}>
-                <button className={Style.tabsButton} onClick={() => toggleTab(`educations`)}>Formations</button>
-                <button className={Style.tabsButton} onClick={() => toggleTab(`experiences`)}>Expériences</button>
+                <button className={`${Style.tabsButton} active`} onClick={(event) => toggleTab(event, `educations`)}>Formations</button>
+                <button className={`${Style.tabsButton}`} onClick={(event) => toggleTab(event, `experiences`)}>Expériences</button>
             </div>
             <div className={Style.tabsWrapper}>
                 <TabContent tabType={activeTab} />
