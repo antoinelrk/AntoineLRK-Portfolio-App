@@ -1,6 +1,7 @@
 import Testimonials from "@/components/Testimonials/Testimonials"
 import Manifest from "@/components/Manifest/Manifest"
 import Skills from "@/components/Skills/Skills"
+import EducationsExperiences from "@/components/EducationsExperiences/EducationsExperiences";
 
 export default function Home () {
     return (
@@ -9,7 +10,7 @@ export default function Home () {
             <Testimonials />
             <Manifest />
             <Skills />
-            {/* Section: Formations */}
+            <EducationsExperiences />
             {/* Section: Projects */}
             {/* Section: Contact */}
         </main>
