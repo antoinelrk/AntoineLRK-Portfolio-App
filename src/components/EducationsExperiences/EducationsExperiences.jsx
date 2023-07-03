@@ -25,7 +25,7 @@ export default function EducationsExperiences () {
     const toggleTab = (value) => setActiveTab(value)
 
     return (
-        <section>
+        <section className={Style.EducationsExperiences}>
             <h2 className={Style.sectionTitle}>FORMATIONS & EXPÉRIENCES</h2>
             <div className={Style.tabsControls}>
                 <button className={Style.tabsButton} onClick={() => toggleTab(`educations`)}>Formations</button>

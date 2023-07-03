@@ -1,0 +1,76 @@
+section.Educations {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8em;
+    width: 100%;
+
+    article.card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1em 2em;
+        border: solid 3px var(--background-alt);
+        border-radius: 8px;
+        color: var(--foreground);
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        transition: background-color .15s ease-in-out;
+
+        &:hover {
+            background-color: var(--background-alt);
+            transition: background-color .15s ease-in-out;
+        }
+
+        h3.cardTitle {
+            font-size: 2.8em;
+        }
+
+        p {
+            display: flex;
+            margin-top: .8em;
+            column-gap: .2em;
+            color: var(--foreground-alt);
+
+            i {
+                text-transform: none;
+                color: var(--tonic);
+            }
+
+            span {
+                color: var(--foreground);
+            }
+        }
+
+        a.educationsCertificationLink {
+            display: flex;
+            margin: 3em auto 0 0;
+            padding: .5em 1em;
+            border: 2px solid var(--background);
+            background-color: var(--background-alt);
+            border-radius: 4px;
+            transition:
+                border-color .15s ease-in-out,
+                background-color .15s ease-in-out;
+
+            &:hover {
+                background-color: var(--tonic);
+                border-color: var(--tonic);
+                transition:
+                    border-color .15s ease-in-out,
+                    background-color .15s ease-in-out;
+            }
+        }
+
+        img.educationsCompanyLogo {
+            position: absolute;
+            bottom: -50px;
+            right: 50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+    }
+}
