@@ -1,0 +1,64 @@
+section.Skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+
+    h2.sectionTitle {
+        color: var(--tonic);
+        font-size: 1.6em;
+        user-select: none;
+        text-transform: uppercase;
+        
+        @media screen and (max-width: 450px) {
+            font-size: 1.2em;
+        }
+    }
+
+    article.skillsSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        h3.subSectionTitle {
+            margin: 1em 0;
+            color: var(--foreground);
+            font-size: .8em;
+            text-transform: uppercase;
+        }
+
+        ul.tagsCloud {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: .5em;
+            column-gap: .5em;
+
+            li.tag {
+                display: flex;
+                align-items: center;
+                height: 2em;
+                column-gap: .5em;
+                border-radius: 9999px;
+                padding: 0 .5em;
+                user-select: none;
+                font-weight: 500;
+
+                .tagIcon {
+                    width: 20px;
+                    height: 20px;
+
+                    figure {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                span {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+}

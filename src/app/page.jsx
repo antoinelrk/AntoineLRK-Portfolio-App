@@ -1,12 +1,16 @@
-import Testimonials from "@/components/Testimonials/Testimonials";
+import Testimonials from "@/components/Testimonials/Testimonials"
+import Manifest from "@/components/Manifest/Manifest"
+import Skills from "@/components/Skills/Skills"
+import EducationsExperiences from "@/components/EducationsExperiences/EducationsExperiences";
 
 export default function Home () {
     return (
         <main>
             {/* Section: Model3D */}
-            {/* Section: Testimonials */}
             <Testimonials />
-            {/* Section: Formations */}
+            <Manifest />
+            <Skills />
+            <EducationsExperiences />
             {/* Section: Projects */}
             {/* Section: Contact */}
         </main>

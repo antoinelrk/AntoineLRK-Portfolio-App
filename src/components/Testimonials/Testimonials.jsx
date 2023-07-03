@@ -6,7 +6,7 @@ export default function Testimonials () {
     return (
         <section className={Style.Testimonials}>
             <div className={Style.avatarWrapper}>
-                <Image src={profilePicture} />
+                <Image src={profilePicture} alt="Photo d'Antoine LRK" />
             </div>
             <h1 className={Style.name}>Antoine LRK</h1>
             <h2 className={Style.presentation}>I'm a</h2>

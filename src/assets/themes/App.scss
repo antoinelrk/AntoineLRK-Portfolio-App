@@ -30,11 +30,13 @@ body {
     font-family: 'DM Sans', sans-serif;
     background-color: var(--background);
     color: var(--foreground);
+    align-items: center;
 
     #app {
         display: flex;
         flex-direction: column;
         width: 100%;
+        max-width: 1200px;
         min-height: 100vh;
         align-items: center;
 
@@ -50,7 +52,7 @@ body {
             .app-name {
                 font-size: 32px;
                 font-weight: 600;
-                color: var(--color);
+                color: var(--foreground);
                 user-select: none;
 
                 span {
@@ -84,7 +86,7 @@ body {
                             background-color: transparent;
                             font-weight: 500;
                             user-select: none;
-                            color: var(--color);
+                            color: var(--foreground);
                         
                             &:focus {
                                 outline-width: 3px;
@@ -107,11 +109,18 @@ body {
                             width: 32px;
                             border-radius: 4px;
                             border: none;
-                            color: var(--color);
+                            color: var(--foreground);
                             cursor: pointer;
                             transition: background-color .25s ease;
                             background-color: transparent;
                         
+                            &:focus {
+                                outline-width: 3px;
+                                outline-color: var(--tonic);
+                                outline-style: solid;
+                                outline-offset: 0;
+                            }
+
                             &:active {
                                 .toggle-theme-icon {
                                     transform: scale(.9);
@@ -135,7 +144,7 @@ body {
                                     display: flex;
                                     width: 14px;
                                     height: 14px;
-                                    fill: var(--color);
+                                    fill: var(--foreground);
                                 }
                             }
                         
@@ -156,6 +165,7 @@ body {
             width: 100%;
             padding: 0 .5em;
             min-height: 100%;
+            column-gap: 20em;
         }
 
         footer {
