@@ -8,6 +8,7 @@
         --background: #222831;
         --background-alt: #393e46;
         --foreground: #fff;
+        --foreground-alt: #898989;
         --invertedBackground: #cfc59c;
     }
 
@@ -16,6 +17,7 @@
         --background: #fbf0c6;
         --background-alt: #cfc59c;
         --foreground: #3c3836;
+        --foreground-alt: #7d7774;
         --invertedBackground: #222831;
     }
 
@@ -23,11 +25,13 @@
         --background: #fbf0c6;
         --background-alt: #cfc59c;
         --foreground: #3c3836;
+        --foreground-alt: #7d7774;
     }
 
     @media (prefers-color-scheme: dark) {
         --background: #222831;
         --background-alt: #393E46;
         --foreground: #fff;
+        --foreground-alt: #898989;
     }
 }
