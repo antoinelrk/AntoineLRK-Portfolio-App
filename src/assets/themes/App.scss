@@ -49,14 +49,12 @@ body {
             height: 56px;
             justify-content: space-between;
             align-items: center;
-            background-color: #a36e6e;
 
             .app-name {
                 font-size: 24px;
                 font-weight: 600;
                 color: var(--foreground);
                 user-select: none;
-                background-color: #ffd2be;
 
                 span {
                     color: var(--tonic);
@@ -67,7 +65,6 @@ body {
                 display: flex;
                 height: auto;
                 width: auto;
-                background-color: #ce8f75;
 
                 ul {
                     display: flex;
@@ -171,10 +168,11 @@ body {
             width: 100%;
             max-width: var(--app-width);
             min-height: 100%;
-            background-color: #ffc7c7;
             row-gap: 2em;
 
             h2.sectionTitle {
+                display: flex;
+                margin: 0 auto;
                 color: var(--foreground);
                 font-size: 1.6em;
                 user-select: none;
@@ -198,7 +196,6 @@ body {
             max-width: var(--app-width);
             color: var(--background-alt);
             user-select: none;
-            background-color: #fff3b6;
 
             .icon {
                 display: flex;

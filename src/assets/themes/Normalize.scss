@@ -36,7 +36,7 @@ button {
     border: none;
     
     &.active {
-        border: solid 2px var(--tonic) !important;
+        border: solid 3px var(--tonic) !important;
         background-color: var(--background-alt);
     }
 }

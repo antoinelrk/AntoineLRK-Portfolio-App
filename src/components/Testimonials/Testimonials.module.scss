@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e1ffc0;
     row-gap: 1em;
 
     .avatarWrapper {
@@ -46,13 +45,11 @@
             display: flex;
             font-size: 32px;
             color: var(--foreground);
-            background-color: #93ba6a;
         }
 
         h2.jobName {
             color: var(--foreground);
             font-size: 16px;
-            background-color: #77a14a;
         }
         
         h3.jobMeta {
@@ -62,7 +59,6 @@
             color: var(--background-alt);
             font-size: 12px;
             font-style: italic;
-            background-color: #578f1b;
         }
 
     }
