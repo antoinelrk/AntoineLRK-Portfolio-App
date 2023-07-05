@@ -52,7 +52,7 @@ export default function Projects () {
 
                 <p className={Style.cardDescription}>{element.description}</p>
                 <div className={Style.cardActions}>
-                    <a href="" className={Style.cardLink}>
+                    <a href="" target="_blank" className={Style.cardLink}>
                         Demo
                         <div className={Style.cardLinkIcon}>
                             <figure>
@@ -62,7 +62,7 @@ export default function Projects () {
                             </figure>
                         </div>
                     </a>
-                    <a href="" className={Style.cardLink}>
+                    <a href="" target="_blank" className={Style.cardLink}>
                         Github
                         <div className={Style.cardLinkIcon}>
                             <figure>
