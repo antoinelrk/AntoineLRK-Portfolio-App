@@ -1,12 +1,18 @@
 :root {
-    --tonic: #00ADB5;
-
     --brad-default: 4px;
     --grid-gap: 32px;
 
+    --light-tonic: #c25e30;
+    --dark-tonic: #00d7e2;
+
     --desktop: 1200px;
+
+    --app-width: 50%;
+
+    --fofa: "Poppins", sans-serif;
   
     *[color-theme="dark"] {
+        --tonic: var(--dark-tonic);
         --background: #222831;
         --background-alt: #393e46;
         --foreground: #fff;
@@ -16,6 +22,7 @@
 
     
     *[color-theme="light"] {
+        --tonic: var(--light-tonic);
         --background: #fbf0c6;
         --background-alt: #cfc59c;
         --foreground: #3c3836;
@@ -24,6 +31,7 @@
     }
 
     @media (prefers-color-scheme: light) {
+        --tonic: var(--light-tonic);
         --background: #fbf0c6;
         --background-alt: #cfc59c;
         --foreground: #3c3836;
@@ -31,6 +39,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
+        --tonic: var(--dark-tonic);
         --background: #222831;
         --background-alt: #393E46;
         --foreground: #fff;

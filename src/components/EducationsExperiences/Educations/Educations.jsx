@@ -31,17 +31,19 @@ export default function Educations () {
 
     const content = data.map(element => (
         <article className={Style.card} key={element.id}>
-            <article className={Style.cardContent}>
-                <h3 className={Style.cardTitle}>{element.title}</h3>
-                <p className={Style.metadata}>du {toHumans(element.start_at)} au {toHumans(element.ended_at)}<i>—</i><span>OpenClassrooms</span></p>
-                <p className={Style.description}>{element.description}</p>
-                <a className={Style.educationsCertificationLink} target="_blank" href="#">Certification</a>
-            </article>
             <aside className={Style.companyBrand}>
-                <a href={element.company_url} className={Style.educationsCompanyLink} target="_blank">
-                    <Image className={Style.educationsCompanyLogo}  src={exampleImage} alt="Logo du centre de formation" />
+                <a href={element.company_url} className={Style.companyLink} target="_blank">
+                    <Image className={Style.companyLogo} src={exampleImage} alt="Logo du centre de formation" />
                 </a>
             </aside>
+            <article className={Style.cardContent}>
+                <a className={Style.companyLink} href={element.company_url}>{element.company_name}</a>
+                <p className={Style.certification}>Développeur Web - Certification de niveau 4</p>
+                <p className={Style.metadata}>du {toHumans(element.start_at)} au {toHumans(element.ended_at)}</p>
+                <p className={Style.description}>{element.description}</p>
+                <a className={Style.certificationLink} target="_blank" href="#">Certification</a>
+            </article>
+
         </article>
     ))
 

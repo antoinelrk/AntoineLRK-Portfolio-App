@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import './Normalize.scss';
 @import './Root.scss';
 
@@ -27,7 +28,7 @@ body {
     width: 100%;
     height: 100%;
     font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--fofa);
     background-color: var(--background);
     color: var(--foreground);
     align-items: center;
@@ -36,7 +37,6 @@ body {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 1200px;
         min-height: 100vh;
         align-items: center;
 
@@ -44,13 +44,14 @@ body {
             display: flex;
             padding: 0 1em;
             max-width: var(--desktop);
+            max-width: var(--app-width);
             width: 100%;
             height: 56px;
             justify-content: space-between;
             align-items: center;
 
             .app-name {
-                font-size: 32px;
+                font-size: 24px;
                 font-weight: 600;
                 color: var(--foreground);
                 user-select: none;
@@ -62,7 +63,7 @@ body {
 
             nav {
                 display: flex;
-                height: 100%;
+                height: auto;
                 width: auto;
 
                 ul {
@@ -73,6 +74,8 @@ body {
                     column-gap: 4px;
 
                     li {
+                        display: flex;
+
                         a.NavLink {
                             display: flex;
                             flex-direction: column;
@@ -85,6 +88,7 @@ body {
                             transition: background-color .25s ease;
                             background-color: transparent;
                             font-weight: 500;
+                            font-size: 15px;
                             user-select: none;
                             color: var(--foreground);
                         
@@ -161,11 +165,22 @@ body {
         main {
             display: flex;
             flex-direction: column;
-            max-width: var(--desktop);
             width: 100%;
-            padding: 0 .5em;
+            max-width: var(--app-width);
             min-height: 100%;
-            column-gap: 20em;
+            row-gap: 2em;
+
+            h2.sectionTitle {
+                display: flex;
+                margin: 0 auto;
+                color: var(--foreground);
+                font-size: 1.6em;
+                user-select: none;
+                
+                @media screen and (max-width: 450px) {
+                    font-size: 1.2em;
+                }
+            }
         }
 
         footer {
@@ -177,6 +192,8 @@ body {
             font-size: 14px;
             font-weight: 600;
             column-gap: 4px;
+            width: 100%;
+            max-width: var(--app-width);
             color: var(--background-alt);
             user-select: none;
 

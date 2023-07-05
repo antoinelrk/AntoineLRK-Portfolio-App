@@ -1,20 +1,7 @@
 section.EducationsExperiences {
     display: flex;
     flex-direction: column;
-    // align-items: center; 
-    row-gap: 2em;
     width: 100%;
-
-    h2.sectionTitle {
-        color: var(--tonic);
-        font-size: 1.6em;
-        user-select: none;
-        margin: 0 auto;
-        
-        @media screen and (max-width: 450px) {
-            font-size: 1.2em;
-        }
-    }
 
     .tabsControls {
         display: flex;
@@ -25,14 +12,26 @@ section.EducationsExperiences {
         button.tabsButton {
             border-radius: 4px;
             padding: 6px 12px;
-            border: solid 2px var(--background-alt);
+            border: solid 3px var(--background-alt);
             color: var(--foreground);
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--fofa);
 
             &:focus {
                 border-color: var(--tonic);
-                background-color: var(--background-alt);
             }
+        }
+    }
+
+    .tabsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2.sectionTitle {
+            margin: 2em 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--background-alt);
         }
     }
 }

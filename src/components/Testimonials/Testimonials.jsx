@@ -5,14 +5,14 @@ import profilePicture from './me.jpg'
 export default function Testimonials () {
     return (
         <section className={Style.Testimonials}>
-            <div className={Style.avatarWrapper}>
-                <Image src={profilePicture} alt="Photo d'Antoine LRK" />
+            <div className={Style.avatarWrapper}><Image src={profilePicture} alt="Photo d'Antoine LRK" /></div>
+            <div className={Style.textualElements}>
+                <h1 className={Style.name}>Antoine LRK</h1>
+                <h2 className={Style.jobName}>I'm a web developer</h2>
+                {/* <h3 className={Style.jobMeta}>Freelance since 09-2019</h3> */}
             </div>
-            <h1 className={Style.name}>Antoine LRK</h1>
-            <h2 className={Style.presentation}>I'm a</h2>
-            <h3 className={Style.jobName}>web developer</h3>
             <a className={Style.cvDownload} href="#" target="_blank" >
-                watch my cv
+                Download my CV
                 <span className={Style.icon}>
                     <figure>
                         <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 512 512">

@@ -3,12 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 1em;
 
     .avatarWrapper {
         position: relative;
         display: flex;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         justify-content: center;
         border-radius: 9999px;
         align-items: center;
@@ -16,12 +17,9 @@
         padding: 4px;
         overflow: hidden;
 
-        
-        @media screen and (max-width: 1200px) {
-            // ? A retirer:
-            margin-top: 2em;
-            width: 200px;
-            height: 200px;
+        @media screen and (max-width: 740px) {
+            width: 180px;
+            height: 180px;
         }
 
         img {
@@ -38,54 +36,50 @@
         }
     }
 
-    h1.name {
+    .textualElements {
         display: flex;
-        margin-top: 1em;
-        font-size: 40px;
-        color: var(--foreground);
-    }
+        flex-direction: column;
+        align-items: center;
+        
+        h1.name {
+            display: flex;
+            font-size: 32px;
+            color: var(--foreground);
+        }
 
-    h2.presentation {
-        margin-top: 1.5em;
-        color: var(--foreground);
-        font-size: 24px;
-    }
-    
-    h3.jobName {
-        display: flex;
-        overflow: hidden;
-        color: var(--tonic);
-        font-size: 24px;
+        h2.jobName {
+            color: var(--foreground);
+            font-size: 16px;
+        }
+        
+        h3.jobMeta {
+            display: flex;
+            margin-top: 1em;
+            overflow: hidden;
+            color: var(--background-alt);
+            font-size: 12px;
+            font-style: italic;
+        }
+
     }
 
     a.cvDownload {
         display: flex;
-        margin-top: 2em;
-        column-gap: 4px;
         font-size: 12px;
         color: var(--foreground);
+        padding: 4px 8px;
+        font-weight: 500;
+        border-radius: var(--brad-default);
+        transition:
+            background-color .15s ease-in-out,
+            color .15s ease-in-out;
 
         &:hover {
-            text-decoration: underline;
+            background-color: var(--background-alt);
             color: var(--tonic);
-
-            span.icon figure {
-                fill: var(--tonic);
-            }
-        }
-
-        span.icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 12px;
-            height: 12px;
-
-            figure {
-                display: flex;
-                height: 78%;
-                fill: var(--foreground);
-            }
+            transition:
+                background-color .15s ease-in-out,
+                color .15s ease-in-out;
         }
     }
 }

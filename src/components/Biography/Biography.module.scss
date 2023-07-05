@@ -1,0 +1,23 @@
+.Biography {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 90%;
+    row-gap: .5em;
+
+    p {
+        display: flex;
+        position: relative;
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: var(--foreground);
+        font-weight: 400;
+        font-family: var(--fofa);
+        
+        @media screen and (max-width: 450px) {
+            padding: 0 1em;
+            font-size: 1em;
+            line-height: 1.8em;
+        }
+    }
+}
