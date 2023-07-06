@@ -18,7 +18,7 @@ export default function Projects () {
             id: 2,
             title: "Kasa",
             tags: [
-                "javascript", "github", "nodejs", "formation"
+                "javascript", "github", "nodejs", "formation", "formation", "formation", "formation", "formation", "formation", "formation", "formation"
             ],
             description: "lorem ipsum dolor sit amet",
             banner_url: "https://picsum.photos/200/300",
@@ -44,10 +44,8 @@ export default function Projects () {
             <div className={Style.cardContent}>
                 <h3 className={Style.cardTitle}>{element.title}</h3>
 
-                <div className="tags">
-                    <ul className="tagsList">
-                        <li className="tag">javascript</li>
-                    </ul>
+                <div className={Style.tags}>
+                    <ul className={Style.tagsList}>{element.tags.map(tag => (<li className={Style.tag}>{tag}</li>))}</ul>
                 </div>
 
                 <p className={Style.cardDescription}>{element.description}</p>
