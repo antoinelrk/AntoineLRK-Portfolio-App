@@ -7,12 +7,12 @@ export default function Projects () {
             id: 1,
             title: "Booki",
             tags: [
-                "javascript", "github", "nodejs", "formation"
+                "javascript", "figme", "nodejs", "openclassrooms"
             ],
-            description: "lorem ipsum dolor sit amet",
+            description: "Dans le cadre de ma formation chez OpenClassrooms, j'ai eu l'occasion d'intégrer une maquette d'un site de Booking. Ce projet m'a offert l'opportunité de me former le HTML5 ainsi que sur SASS",
             banner_url: "https://picsum.photos/200/300",
-            demo_url: "https://google.com",
-            repo_url: "https://google.com"
+            demo_url: "https://antoinelrk.github.io/P2_Booki/",
+            repo_url: "https://github.com/antoinelrk/P2_Booki"
         },
         {
             id: 2,
