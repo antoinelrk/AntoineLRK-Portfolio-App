@@ -1,51 +1,45 @@
+"use client"
 import Style from './Educations.module.scss'
-import Image from 'next/image'
-import exampleImage from './example.png'
 import { toHumans } from '@/helpers/Date.js'
+import { useEffect, useState } from 'react'
 
 export default function Educations () {
-    const dateExample = new Date("1994-02-06 12:10:00").toLocaleString('fr-FR', { timeZone: "Europe/Paris" })
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
-    const data = [
-        {
-            id: 1,
-            title: "Développeur Intégrateur Web",
-            start_at: dateExample,
-            ended_at: dateExample,
-            company_name: "OpenClassrooms",
-            company_brand: exampleImage,
-            company_url: "https://google.com",
-            description: "lorem ipsum"
-        },
-        {
-            id: 2,
-            title: "Développeur Intégrateur Web",
-            start_at: dateExample,
-            ended_at: dateExample,
-            company_name: "OpenClassrooms",
-            company_brand: exampleImage,
-            company_url: "https://google.com",
-            description: "Lorem ipsum"
-        }
-    ]
+    useEffect(() => {
+        fetch (`http://localhost:3000/api/educations`).then(async (response) => {
+            const dataResponse = await response.json()
+            setData(dataResponse)
+        }).catch((e) => {
+            if (e instanceof Error) setError(e.message)
+        }).finally(() => setLoading(false))
+    }, [])
 
-    const content = data.map(element => (
+    const loadingComponent = <div>Loading...</div>
+    const errorComponent = <div>Error: {error}</div>
+    const educationsComponent = data?.map(element => (
         <article className={Style.card} key={element.id}>
             <aside className={Style.companyBrand}>
                 <a href={element.company_url} className={Style.companyLink} target="_blank">
-                    <Image className={Style.companyLogo} src={exampleImage} alt="Logo du centre de formation" />
+                    <img className={Style.companyLogo} src={element.company_brand} alt="Logo du centre de formation" />
                 </a>
             </aside>
             <article className={Style.cardContent}>
-                <a className={Style.companyLink} href={element.company_url}>{element.company_name}</a>
-                <p className={Style.certification}>Développeur Web - Certification de niveau 4</p>
-                <p className={Style.metadata}>du {toHumans(element.start_at)} au {toHumans(element.ended_at)}</p>
+                <a className={Style.companyLink} href={element.company_url} target="_blank">{element.company_name}</a>
+                <p className={Style.certification}>{element.title}</p>
+                <p className={Style.metadata}>{toHumans(element.start_at)} à {element.ended_at ? toHumans(element.ended_at) : "aujourd'hui"}</p>
                 <p className={Style.description}>{element.description}</p>
-                <a className={Style.certificationLink} target="_blank" href="#">Certification</a>
+                {element.certification_url ? (<a className={Style.certificationLink} target="_blank" href={element.certification_url}>Certification</a>) : ""}
             </article>
 
         </article>
     ))
 
-    return (<section className={Style.Educations}>{content}</section>)
+    return (
+        <section className={Style.Educations}>
+            {loading ? (loadingComponent) : error ? (errorComponent) : (educationsComponent)}
+        </section>
+    )
 }

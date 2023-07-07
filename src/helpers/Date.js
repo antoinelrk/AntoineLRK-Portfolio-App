@@ -6,5 +6,6 @@ export function toHumans (dateString) {
     const numberOfDay = date.getDate();
     const monthName = arrayMonth[date.getMonth()];
     const fullYear = date.getFullYear();
-    return `${dayName} ${numberOfDay} ${monthName} ${fullYear}`
+    // return `${dayName} ${numberOfDay} ${monthName} ${fullYear}`
+    return `${monthName} ${fullYear}`
 }

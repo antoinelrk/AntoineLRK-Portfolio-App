@@ -1,38 +1,32 @@
+"use client"
 import Style from './Experiences.module.scss'
 import Image from 'next/image'
 import exampleImage from './example.png'
 import { toHumans } from '@/helpers/Date.js'
+import { useState, useEffect } from 'react'
 
 export default function Experiences () {
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
-    const dateExample = new Date("1994-02-06 12:10:00").toLocaleString('fr-FR', { timeZone: "Europe/Paris" })
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/experiences/get`).then(async (response) => {
+            const dataResponse = await response.json()
+            setData(dataResponse)
+        }).catch((e) => {
+            if (e instanceof Error) setError(e.message)
+        }).finally(() => setLoading(false))
+    }, [])
 
-    const data = [
-        {
-            id: 1,
-            title: "Développeur Intégrateur Web",
-            start_at: dateExample,
-            ended_at: dateExample,
-            company_name: "OpenClassrooms",
-            company_brand: exampleImage,
-            description: "Développement de module pour l'outil de gestion des utilisateur et mise en place des postes de travails pour les clients."
-        },
-        {
-            id: 2,
-            title: "Développeur Intégrateur Web",
-            start_at: dateExample,
-            ended_at: dateExample,
-            company_name: "OpenClassrooms",
-            company_brand: exampleImage,
-            description: "Développement de module pour l'outil de gestion des utilisateur et mise en place des postes de travails pour les clients."
-        }
-    ]
+    const loadingComponent = <div>Loading...</div>
+    const errorComponent = <div>Error: {error}</div>
 
-    const content = data.map(element => (
+    const experienceComponent = data?.map(element => (
         <article className={Style.card} key={element.id}>
             <aside className={Style.companyBrand}>
                 <a href={element.company_url} className={Style.companyLink} target="_blank">
-                    <Image className={Style.companyLogo}  src={exampleImage} alt="Logo du centre de formation" />
+                    <img className={Style.companyLogo}  src={element.company_brand} alt="Logo du centre de formation" />
                 </a>
             </aside>
             <article className={Style.cardContent}>
@@ -44,5 +38,8 @@ export default function Experiences () {
         </article>
     ))
 
-    return (<section className={Style.Experiences}>{content}</section>)
+    return (
+    <section className={Style.Experiences}>
+        {loading ? (loadingComponent) : error ? (errorComponent) : (experienceComponent)}
+    </section>)
 }
