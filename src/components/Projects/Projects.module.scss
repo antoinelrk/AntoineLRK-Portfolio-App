@@ -1,0 +1,110 @@
+section.Projects {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+
+    h2.sectionTitle {
+        margin: 0 auto;
+    }
+
+    ul.projectsWrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, calc(50% - 1em));
+        column-gap: 2em;
+        row-gap: 2em;
+
+        li.projectElement {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            padding: 1.5em;
+            height: auto;
+            background-color: var(--background-alt);
+            border-radius: .5em;
+            
+            img {
+                display: flex;
+                width: 100%;
+                max-height: 50%;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                border-radius: .5em;
+                filter: drop-shadow(0 8px 16px rgba(black, .15));
+            }
+
+            .cardContent {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5em;
+                row-gap: .5em;
+
+                .cardTitle {
+                    display: flex;
+                    margin: 0 auto;
+                    font-size: 22px;
+                }
+
+                .tags {
+                    display: flex;
+                    width: 100%;
+
+                    ul.tagsList {
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: .35em;
+                        row-gap: .35em;
+                        width: 100%;
+
+                        li.tag {
+                            display: flex;
+                            border-radius: 9999px;
+                            background-color: var(--background);
+                            font-size: 12px;
+                            padding: .25em 1em;
+                        }
+                    }
+                }
+
+                p.cardDescription {}
+
+                .cardActions {
+                    display: flex;
+                    margin-top: 1.5em;
+                    column-gap: .5em;
+
+                    a.cardLink {
+                        display: flex;
+                        padding: 6px 12px;
+                        column-gap: .5em;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--background);
+                        border-radius: 4px;
+                        transition: background-color .15s ease-in-out;
+
+                        &:hover {
+                            background-color: var(--tonic);
+                            transition: background-color .15s ease-in-out;
+                        }
+
+                        .cardLinkIcon {
+                            display: flex;
+                            width: 16px;
+                            height: 16px;
+                            justify-content: center;
+                            align-items: center;
+
+                            figure {
+                                display: flex;
+                                width: 80%;
+                                height: 80%;
+                                fill: var(--foreground);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
