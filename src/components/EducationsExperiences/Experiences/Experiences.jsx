@@ -1,7 +1,7 @@
 "use client"
 import Style from './Experiences.module.scss'
 import { toHumans } from '@/helpers/Date.js'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 export default function Experiences () {
     const [data, setData] = useState(null)
@@ -19,8 +19,7 @@ export default function Experiences () {
 
     const loadingComponent = <div>Loading...</div>
     const errorComponent = <div>Error: {error}</div>
-
-    const experienceComponent = data?.map(element => (
+    const dataComponent = (data?.map(element => (
         <article className={Style.card} key={element.id}>
             <aside className={Style.companyBrand}>
                 <a href={element.company_url} className={Style.companyLink} target="_blank">
@@ -35,9 +34,13 @@ export default function Experiences () {
             </article>
         </article>
     ))
+)
 
-    return (
-    <section className={Style.Experiences}>
-        {loading ? (loadingComponent) : error ? (errorComponent) : (experienceComponent)}
-    </section>)
+    if (loading) {
+        <section className={Style.Experiences}>{loadingComponent}</section>
+    } else if (error) {
+        <section className={Style.Experiences}>{errorComponent}</section>
+    } else {        
+        <section className={Style.Experiences}>{dataComponent}</section>
+    }
 }
