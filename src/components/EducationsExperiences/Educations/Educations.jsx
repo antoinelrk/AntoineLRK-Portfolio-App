@@ -9,7 +9,7 @@ export default function Educations () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch (`http://localhost:3000/api/educations`).then(async (response) => {
+        fetch (`http://localhost:3001/educations`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {

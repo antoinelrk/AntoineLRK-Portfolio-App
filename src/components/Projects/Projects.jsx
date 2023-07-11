@@ -9,7 +9,7 @@ export default function Projects () {
 
     useEffect(() => {
         setLoading(true)
-        fetch (`http://localhost:3000/api/projects/get`).then(async (response) => {
+        fetch (`http://localhost:3001/projects`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {

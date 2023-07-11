@@ -1,7 +1,5 @@
 "use client"
 import Style from './Experiences.module.scss'
-import Image from 'next/image'
-import exampleImage from './example.png'
 import { toHumans } from '@/helpers/Date.js'
 import { useState, useEffect } from 'react'
 
@@ -11,7 +9,7 @@ export default function Experiences () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/experiences/get`).then(async (response) => {
+        fetch(`http://localhost:3001/experiences`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {
