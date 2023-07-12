@@ -1,44 +1,25 @@
+"use client"
 import Style from './Projects.module.scss'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Projects () {
-    const data = [
-        {
-            id: 1,
-            title: "Booki",
-            tags: [
-                "javascript", "figme", "nodejs", "openclassrooms"
-            ],
-            description: "Dans le cadre de ma formation chez OpenClassrooms, j'ai eu l'occasion d'intégrer une maquette d'un site de Booking. Ce projet m'a offert l'opportunité de me former le HTML5 ainsi que sur SASS",
-            banner_url: "https://picsum.photos/200/300",
-            demo_url: "https://antoinelrk.github.io/P2_Booki/",
-            repo_url: "https://github.com/antoinelrk/P2_Booki"
-        },
-        {
-            id: 2,
-            title: "Kasa",
-            tags: [
-                "javascript", "github", "nodejs", "formation", "formation", "formation", "formation", "formation", "formation", "formation", "formation"
-            ],
-            description: "lorem ipsum dolor sit amet",
-            banner_url: "https://picsum.photos/200/300",
-            demo_url: "https://google.com",
-            repo_url: "https://google.com"
-        },
-        {
-            id: 3,
-            title: "MewJS",
-            tags: [
-                "javascript", "github", "nodejs", "formation"
-            ],
-            description: "lorem ipsum dolor sit amet",
-            banner_url: "https://picsum.photos/200/300",
-            demo_url: "https://google.com",
-            repo_url: "https://google.com"
-        }
-    ]
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
 
-    const projectsElements = data.map(element => (
+    useEffect(() => {
+        setLoading(true)
+        fetch (`http://localhost:3001/projects`).then(async (response) => {
+            const dataResponse = await response.json()
+            setData(dataResponse)
+        }).catch((e) => {
+            if (e instanceof Error) setError(e.message)
+        }).finally(() => setLoading(false))
+    }, [])
+
+    const loadingComponent = <div className={Style.loadingComponent}>Loading...</div>
+    const errorsComponent = <div className={Style.errorsComponent}>Error: {error}</div>
+    const projectsElements = data?.map(element => (
         <li className={Style.projectElement}>
             <img src={element.banner_url} alt="" />
             <div className={Style.cardContent}>
@@ -50,7 +31,8 @@ export default function Projects () {
 
                 <p className={Style.cardDescription}>{element.description}</p>
                 <div className={Style.cardActions}>
-                    <a href="" target="_blank" className={Style.cardLink}>
+                    {element.demo_url ? (
+                        <a href={element.demo_url} target="_blank" className={Style.cardLink}>
                         Demo
                         <div className={Style.cardLinkIcon}>
                             <figure>
@@ -59,8 +41,11 @@ export default function Projects () {
                                 </svg>
                             </figure>
                         </div>
-                    </a>
-                    <a href="" target="_blank" className={Style.cardLink}>
+                        </a>
+                    ) : ""}
+
+                    {element.repo_url ? (
+                        <a href={element.repo_url} target="_blank" className={Style.cardLink}>
                         Github
                         <div className={Style.cardLinkIcon}>
                             <figure>
@@ -69,7 +54,8 @@ export default function Projects () {
                             </svg>
                             </figure>
                         </div>
-                    </a>
+                        </a>
+                    ) : ""}
                 </div>
             </div>
         </li>
@@ -79,7 +65,11 @@ export default function Projects () {
         <>
             <section className={Style.Projects}>
                 <h2 className={Style.sectionTitle}>Mes réalisations</h2>
-                <ul className={Style.projectsWrapper}>{projectsElements}</ul>
+                {loading ? (loadingComponent) : error ? (errorsComponent) : (
+                    <ul className={Style.projectsWrapper}>
+                        {projectsElements}
+                    </ul>
+                )}
             </section>
         </>
     )

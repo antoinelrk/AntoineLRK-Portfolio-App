@@ -11,13 +11,13 @@ const TabContent = ({ tabType }) => {
         case "experiences":
             content = (
             <>
-                <h2 className={Style.sectionTitle}>Expériences</h2>
+                {/* <h2 className={Style.sectionTitle}>Expériences</h2> */}
                 <Experiences />
             </>)
             break;
         case "educations":
             content = (<>
-                <h2 className={Style.sectionTitle}>Formations</h2>
+                {/* <h2 className={Style.sectionTitle}>Formations</h2> */}
                 <Educations />
             </>    
             )
@@ -38,6 +38,7 @@ export default function EducationsExperiences () {
 
     return (
         <section className={Style.EducationsExperiences}>
+            <h2 className={Style.sectionTitle}>Expériences & Formations</h2>
             <div className={Style.tabsControls}>
                 <button className={`${Style.tabsButton} active`} onClick={(event) => toggleTab(event, `educations`)}>Formations</button>
                 <button className={`${Style.tabsButton}`} onClick={(event) => toggleTab(event, `experiences`)}>Expériences</button>

@@ -2,6 +2,10 @@ section.EducationsExperiences {
     display: flex;
     flex-direction: column;
     width: 100%;
+    
+    h2.sectionTitle {
+        margin: 2em auto;
+    }
 
     .tabsControls {
         display: flex;
@@ -26,12 +30,5 @@ section.EducationsExperiences {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        h2.sectionTitle {
-            margin: 2em 0;
-            font-size: 14px;
-            text-transform: uppercase;
-            color: var(--background-alt);
-        }
     }
 }

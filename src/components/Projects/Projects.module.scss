@@ -25,7 +25,7 @@ section.Projects {
             img {
                 display: flex;
                 width: 100%;
-                max-height: 50%;
+                height: auto;
                 aspect-ratio: 16/9;
                 object-fit: cover;
                 border-radius: .5em;
@@ -37,6 +37,7 @@ section.Projects {
                 flex-direction: column;
                 margin-top: 1.5em;
                 row-gap: .5em;
+                height: 100%;
 
                 .cardTitle {
                     display: flex;
@@ -65,11 +66,14 @@ section.Projects {
                     }
                 }
 
-                p.cardDescription {}
+                p.cardDescription {
+                    margin: .8em 0;
+                    line-height: 1.8;
+                }
 
                 .cardActions {
                     display: flex;
-                    margin-top: 1.5em;
+                    margin-top: auto;
                     column-gap: .5em;
 
                     a.cardLink {
