@@ -74,6 +74,13 @@
             background-color .15s ease-in-out,
             color .15s ease-in-out;
 
+        &:focus {
+            outline-width: 3px;
+            outline-color: var(--tonic);
+            outline-style: solid;
+            outline-offset: 0;
+        }
+
         &:hover {
             background-color: var(--background-alt);
             color: var(--tonic);

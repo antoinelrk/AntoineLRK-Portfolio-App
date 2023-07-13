@@ -20,7 +20,7 @@ const TabContent = ({ tabType }) => {
 }
 
 export default function EducationsExperiences () {
-    const [activeTab, setActiveTab] = useState(`experiences`)
+    const [activeTab, setActiveTab] = useState(`educations`)
 
     const toggleTab = (event, value) => {
         document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))

@@ -42,11 +42,16 @@ section.Educations {
                 display: flex;
                 width: 128px;
                 height: 128px;
-                border-radius: .5em;
+                border-radius: 1em;
                 overflow: hidden;
                 border: none;
                 cursor: pointer;
+                border: solid 3px transparent;
                 
+                &:focus {
+                    border-color: var(--tonic);
+                }
+
                 img.companyLogo {
                     display: flex;
                     width: 100%;
@@ -72,6 +77,11 @@ section.Educations {
                 font-size: 1.2em;
                 font-weight: 600;
                 cursor: pointer;
+
+                &:focus {
+                    color: var(--tonic);
+                    text-decoration: underline;
+                }
 
                 &:hover {
                     color: var(--tonic);
