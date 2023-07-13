@@ -7,6 +7,42 @@ section.Projects {
         margin: 0 auto;
     }
 
+    ul.projectsFilterWrapper {
+        display: flex;
+        justify-content: center;
+        column-gap: .4em;
+        flex-wrap: wrap;
+
+        li.tagListElement {
+            display: flex;
+            width: auto;
+
+            button {
+                display: flex;
+                padding: .3em .7em;
+                width: 100%;
+                height: 100%;
+                border: solid 3px transparent;
+                font-size: .8em;
+                font-family: 'Roboto';
+                text-transform: uppercase;
+                font-weight: 700;
+                background-color: var(--background-alt);
+                letter-spacing: 1px;
+                border-radius: 9999px;
+                color: var(--foreground);
+
+                &.active {
+                    color: var(--tonic);
+                }
+
+                &:hover {
+                    background-color: var(--tonic);
+                }
+            }
+        }
+    }
+
     ul.projectsWrapper {
         display: grid;
         grid-template-columns: repeat(auto-fill, calc(50% - 1em));
