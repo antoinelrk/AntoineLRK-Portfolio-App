@@ -28,17 +28,23 @@ section.Projects {
                 font-family: 'Roboto';
                 text-transform: uppercase;
                 font-weight: 700;
-                background-color: var(--background-alt);
                 letter-spacing: 1px;
                 border-radius: 9999px;
                 color: var(--foreground);
+                background-color: var(--background-alt);
+                border: solid 3px transparent;
+                
+                &:focus {
+                    border: solid 3px var(--tonic);
+                    outline: none;
+                }
+    
+                &:hover {
+                    background-color: var(--tonic);
+                }
 
                 &.active {
                     color: var(--tonic);
-                }
-
-                &:hover {
-                    background-color: var(--tonic);
                 }
             }
         }
@@ -134,7 +140,14 @@ section.Projects {
                         background-color: var(--background);
                         border-radius: var(--brad-default);
                         transition: background-color .15s ease-in-out;
-
+                
+                        &:focus {
+                            outline-width: 3px;
+                            outline-color: var(--tonic);
+                            outline-style: solid;
+                            outline-offset: 0;
+                        }
+        
                         &:hover {
                             background-color: var(--tonic);
                             transition: background-color .15s ease-in-out;

@@ -16,13 +16,19 @@ section.EducationsExperiences {
 
         button.tabsButton {
             border-radius: var(--brad-default);
-            padding: 6px 12px;
-            border: solid 3px var(--background-alt);
+            padding: 6px 12px; 
             color: var(--foreground);
             font-family: var(--fofa);
-
+            background-color: var(--background-alt);
+            border: solid 3px transparent;
+            
             &:focus {
-                border-color: var(--tonic);
+                border: solid 3px var(--tonic);
+                outline: none;
+            }
+
+            &:hover {
+                background-color: var(--tonic);
             }
         }
     }

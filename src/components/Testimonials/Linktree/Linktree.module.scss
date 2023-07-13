@@ -22,7 +22,14 @@ article.Linktree {
                 align-items: center;
                 font-size: 14px;
                 padding: 8px;
-                border-radius: 4px;
+                border-radius: var(--brad-default);
+
+                &:focus {
+                    outline-width: 3px;
+                    outline-color: var(--tonic);
+                    outline-style: solid;
+                    outline-offset: 0;
+                }
 
                 &:active {
                     figure {
