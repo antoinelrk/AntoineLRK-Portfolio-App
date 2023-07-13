@@ -1,48 +1,51 @@
+// @import './gruvbox';
+@import './bw';
+
 :root {
-    --brad-default: 4px;
+    --brad-default: 9999px;
     --grid-gap: 32px;
 
-    --light-tonic: #c25e30;
-    --dark-tonic: #00d7e2;
-
     --desktop: 1200px;
-
     --app-width: 50%;
 
     --fofa: "Poppins", sans-serif;
+
+    // Colors
+    --white: #fff;
+    --black: #000;
   
     *[color-theme="dark"] {
         --tonic: var(--dark-tonic);
-        --background: #222831;
-        --background-alt: #393e46;
-        --foreground: #fff;
-        --foreground-alt: #898989;
-        --invertedBackground: #cfc59c;
+        --background: var(--dbackground);
+        --background-alt: var(--dbackground-alt);
+        --foreground: var(--dforeground);
+        --foreground-alt: var(--dforeground-alt);
+        --invertedBackground: var(--lbackground-alt);
     }
 
     
     *[color-theme="light"] {
         --tonic: var(--light-tonic);
-        --background: #fbf0c6;
-        --background-alt: #cfc59c;
-        --foreground: #3c3836;
-        --foreground-alt: #7d7774;
-        --invertedBackground: #222831;
+        --background: var(--lbackground);
+        --background-alt: var(--lbackground-alt);
+        --foreground: var(--lforeground);
+        --foreground-alt: var(--lforeground-alt);
+        --invertedBackground: var(--dbackground);
     }
 
     @media (prefers-color-scheme: light) {
         --tonic: var(--light-tonic);
-        --background: #fbf0c6;
-        --background-alt: #cfc59c;
-        --foreground: #3c3836;
-        --foreground-alt: #7d7774;
+        --background: var(--lbackground);
+        --background-alt: var(--lbackground-alt);
+        --foreground: var(--lforeground);
+        --foreground-alt: var(--lforeground-alt);
     }
 
     @media (prefers-color-scheme: dark) {
         --tonic: var(--dark-tonic);
-        --background: #222831;
-        --background-alt: #393E46;
-        --foreground: #fff;
-        --foreground-alt: #898989;
+        --background: var(--dbackground);
+        --background-alt: var(--dbackground-alt);
+        --foreground: var(--dforeground);
+        --foreground-alt: var(--dforeground-alt);
     }
 }

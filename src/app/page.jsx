@@ -8,9 +8,9 @@ export default function Home () {
         <main>
             {/* Section: Model3D */}
             <Testimonials />
-            <Skills />
-            <EducationsExperiences />
+            {/* <Skills /> */}
             <Projects />
+            <EducationsExperiences />
             {/* Section: Contact */}
         </main>
     )

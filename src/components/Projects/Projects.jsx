@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 
 export default function Projects () {
     const [data, setData] = useState(null)
+    const [filteredData, setFilteredData] = useState(null)
+    const [tags, setTags] = useState(null)
+    const [selectedTag, setSelectedTags] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
@@ -12,6 +15,15 @@ export default function Projects () {
         fetch (`http://localhost:3001/projects`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
+
+            const tagsSet = new Set()
+
+            dataResponse.map(p => {
+                p.tags.map(tag => tagsSet.add(tag))
+            })
+
+            setTags(Array.from(tagsSet))
+
         }).catch((e) => {
             if (e instanceof Error) setError(e.message)
         }).finally(() => setLoading(false))
@@ -19,14 +31,17 @@ export default function Projects () {
 
     const loadingComponent = <div className={Style.loadingComponent}>Loading...</div>
     const errorsComponent = <div className={Style.errorsComponent}>Error: {error}</div>
-    const projectsElements = data?.map(element => (
+
+    let renderedData = filteredData ?? data
+
+    const projectsElements = renderedData?.map(element => (
         <li className={Style.projectElement}>
             <img src={element.banner_url} alt="" />
             <div className={Style.cardContent}>
                 <h3 className={Style.cardTitle}>{element.title}</h3>
 
                 <div className={Style.tags}>
-                    <ul className={Style.tagsList}>{element.tags.map(tag => (<li className={Style.tag}>{tag}</li>))}</ul>
+                    <ul className={Style.tagsList}>{element.tags.map(tag => (<li className={Style.tag}>#{tag}</li>))}</ul>
                 </div>
 
                 <p className={Style.cardDescription}>{element.description}</p>
@@ -61,14 +76,32 @@ export default function Projects () {
         </li>
     ))
 
+
+    const toggleFilter = (event, value) => {
+        document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
+        event.target.classList.add('active')
+
+        setFilteredData(data.filter((item) => item.tags.includes(value)))
+        setSelectedTags(value)
+    }
+
+    const tagsFilterElement = tags?.map(tag => (
+        <li className={Style.tagListElement}>
+            <button onClick={(event) => toggleFilter(event, tag)} >{tag}</button>
+        </li>
+    ))
+
     return (
         <>
             <section className={Style.Projects}>
                 <h2 className={Style.sectionTitle}>Mes réalisations</h2>
                 {loading ? (loadingComponent) : error ? (errorsComponent) : (
-                    <ul className={Style.projectsWrapper}>
-                        {projectsElements}
-                    </ul>
+                    <>
+                        <ul className={Style.projectsFilterWrapper}>{tagsFilterElement}</ul>
+                        <ul className={Style.projectsWrapper}>
+                            {projectsElements}
+                        </ul>
+                    </>
                 )}
             </section>
         </>
