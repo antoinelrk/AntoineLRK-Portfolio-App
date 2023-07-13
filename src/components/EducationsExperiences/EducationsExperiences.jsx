@@ -9,18 +9,10 @@ const TabContent = ({ tabType }) => {
 
     switch (tabType) {
         case "experiences":
-            content = (
-            <>
-                {/* <h2 className={Style.sectionTitle}>Expériences</h2> */}
-                <Experiences />
-            </>)
+            content = (<Experiences />)
             break;
         case "educations":
-            content = (<>
-                {/* <h2 className={Style.sectionTitle}>Formations</h2> */}
-                <Educations />
-            </>    
-            )
+            content = (<Educations />)
             break;
     }
 
@@ -28,7 +20,7 @@ const TabContent = ({ tabType }) => {
 }
 
 export default function EducationsExperiences () {
-    const [activeTab, setActiveTab] = useState(`educations`)
+    const [activeTab, setActiveTab] = useState(`experiences`)
 
     const toggleTab = (event, value) => {
         document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
@@ -40,10 +32,17 @@ export default function EducationsExperiences () {
         <section className={Style.EducationsExperiences}>
             <h2 className={Style.sectionTitle}>Expériences & Formations</h2>
             <div className={Style.tabsControls}>
-                <button className={`${Style.tabsButton} active`} onClick={(event) => toggleTab(event, `educations`)}>Formations</button>
-                <button className={`${Style.tabsButton}`} onClick={(event) => toggleTab(event, `experiences`)}>Expériences</button>
+                <button className={`${Style.tabsButton} active`} onClick={(event) => toggleTab(event, `experiences`)}>Expériences</button>
+                <button className={`${Style.tabsButton}`} onClick={(event) => toggleTab(event, `educations`)}>Formations</button>
             </div>
+
             <div className={Style.tabsWrapper}>
+                <div className={Style.timelineLayout}>
+                    <span className={Style.nowCircle}>
+                        Now
+                    </span>
+                </div>
+
                 <TabContent tabType={activeTab} />
             </div>
         </section>

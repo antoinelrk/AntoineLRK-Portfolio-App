@@ -2,17 +2,26 @@ section.Educations {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1em;
-    width: 100%;
+    column-gap: 1em;
+    width: 50%;
+    padding: 0 2em;
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+    }
 
     article.card {
         position: relative;
         display: flex;
-        width: 75%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         color: var(--foreground);
         font-family: 'DM Sans', sans-serif;
         column-gap: 1em;
-        padding-bottom: 1em;
+        padding: 2em;
+        border-radius: .5em;
+        background-color: var(--background-alt);
 
         @media screen and (max-width: 400px) {
             width: 100%;
@@ -20,23 +29,6 @@ section.Educations {
             align-items: center;
             row-gap: 2em;
             padding: 2em;
-        }
-
-        &:last-child {
-            &::after {
-                display: none;
-            }
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            border-radius: 9999px;
-            background-color: var(--background-alt);
         }
 
         aside.companyBrand {
@@ -48,18 +40,12 @@ section.Educations {
 
             a.companyLink {
                 display: flex;
-                width: 64px;
-                height: 64px;
-                border-radius: 4px;
+                width: 128px;
+                height: 128px;
+                border-radius: .5em;
                 overflow: hidden;
                 border: none;
                 cursor: pointer;
-
-                @media screen and (max-width: 400px) {
-                    width: 128px;
-                    height: 128px;
-                    border-radius: .5em;
-                }
                 
                 img.companyLogo {
                     display: flex;
@@ -74,21 +60,18 @@ section.Educations {
             display: flex;
             flex-direction: column;
             font-family: var(--fofa);
+            align-items: center;
+            margin-top: 1em;
 
             @media screen and (max-width: 400px) {
-                align-items: center;
+                margin-top: 0;
             }
 
             a.companyLink {
                 display: flex;
-                margin-right: auto;
                 font-size: 1.2em;
                 font-weight: 600;
                 cursor: pointer;
-
-                @media screen and (max-width: 400px) {
-                    margin-right: 0;
-                }
 
                 &:hover {
                     color: var(--tonic);

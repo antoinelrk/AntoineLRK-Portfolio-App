@@ -2,9 +2,10 @@ section.EducationsExperiences {
     display: flex;
     flex-direction: column;
     width: 100%;
+    row-gap: 1em;
     
     h2.sectionTitle {
-        margin: 2em auto 1em auto;
+        margin: 0 auto;
     }
 
     .tabsControls {
@@ -14,7 +15,7 @@ section.EducationsExperiences {
         justify-content: center;
 
         button.tabsButton {
-            border-radius: 4px;
+            border-radius: var(--brad-default);
             padding: 6px 12px;
             border: solid 3px var(--background-alt);
             color: var(--foreground);
@@ -27,8 +28,43 @@ section.EducationsExperiences {
     }
 
     .tabsWrapper {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
+        row-gap: 1em;
+        padding: 5em 0;
+
+        .timelineLayout {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+    
+            .nowCircle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                width: 64px;
+                height: 64px;
+                background-color: var(--background-alt);
+                border: solid 3px var(--tonic);
+                border-radius: 9999px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                height: 100%;
+                background-color: var(--tonic);
+                z-index: -1;
+            }
+        }
     }
 }
