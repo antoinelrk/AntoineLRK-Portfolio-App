@@ -11,6 +11,7 @@ section.Projects {
         display: flex;
         justify-content: center;
         column-gap: .4em;
+        row-gap: .4em;
         flex-wrap: wrap;
 
         li.tagListElement {
@@ -49,6 +50,12 @@ section.Projects {
         column-gap: 2em;
         row-gap: 2em;
 
+        @media screen and (max-width: 400px) {
+            display: flex;
+            flex-direction: column;
+            margin: 0 2em;
+        }
+
         li.projectElement {
             display: flex;
             flex-direction: column;
@@ -57,6 +64,13 @@ section.Projects {
             height: auto;
             background-color: var(--background-alt);
             border-radius: .5em;
+            transition: border-color .25s ease;
+            
+            border: solid 3px transparent;
+            &:hover {
+                border-color: var(--tonic);
+                transition: border-color .25s ease;
+            }
             
             img {
                 display: flex;

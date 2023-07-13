@@ -14,6 +14,14 @@ section.Educations {
         column-gap: 1em;
         padding-bottom: 1em;
 
+        @media screen and (max-width: 400px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 2em;
+            padding: 2em;
+        }
+
         &:last-child {
             &::after {
                 display: none;
@@ -33,6 +41,10 @@ section.Educations {
 
         aside.companyBrand {
             display: flex;
+            
+            @media screen and (max-width: 400px) {
+                margin: 0 auto;
+            }
 
             a.companyLink {
                 display: flex;
@@ -42,6 +54,12 @@ section.Educations {
                 overflow: hidden;
                 border: none;
                 cursor: pointer;
+
+                @media screen and (max-width: 400px) {
+                    width: 128px;
+                    height: 128px;
+                    border-radius: .5em;
+                }
                 
                 img.companyLogo {
                     display: flex;
@@ -57,12 +75,20 @@ section.Educations {
             flex-direction: column;
             font-family: var(--fofa);
 
+            @media screen and (max-width: 400px) {
+                align-items: center;
+            }
+
             a.companyLink {
                 display: flex;
                 margin-right: auto;
                 font-size: 1.2em;
                 font-weight: 600;
                 cursor: pointer;
+
+                @media screen and (max-width: 400px) {
+                    margin-right: 0;
+                }
 
                 &:hover {
                     color: var(--tonic);
