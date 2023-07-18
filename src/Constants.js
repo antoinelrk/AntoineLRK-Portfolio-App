@@ -1,1 +1,1 @@
-export default API_URL = `https://api.antoinelrk.com`
+export const API_URL = `https://api.antoinelrk.com`
