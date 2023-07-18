@@ -2,6 +2,7 @@
 import Style from './Testimonials.module.scss'
 import Linktree from './Linktree/Linktree.jsx'
 import { useEffect, useState } from 'react'
+import { API_URL } from '@/Constants.js'
 
 export default function Testimonials () {
     const [data, setData] = useState(null)
@@ -9,7 +10,7 @@ export default function Testimonials () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch (`http://localhost:3001/profiles`).then(async (response) => {
+        fetch (`${API_URL}/profiles`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse[0])
         }).catch((e) => {

@@ -2,6 +2,7 @@
 import Style from './Experiences.module.scss'
 import { toHumans } from '@/helpers/Date.js'
 import { useState, useEffect, useMemo } from 'react'
+import { API_URL } from '@/Constants.js'
 
 export default function Experiences () {
     const [data, setData] = useState(null)
@@ -9,7 +10,7 @@ export default function Experiences () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch(`http://localhost:3001/experiences`).then(async (response) => {
+        fetch(`${API_URL}/experiences`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {

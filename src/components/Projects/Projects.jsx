@@ -1,6 +1,7 @@
 "use client"
 import Style from './Projects.module.scss'
 import { useEffect, useState } from 'react'
+import { API_URL } from '@/Constants.js'
 
 export default function Projects () {
     const [data, setData] = useState(null)
@@ -12,7 +13,7 @@ export default function Projects () {
 
     useEffect(() => {
         setLoading(true)
-        fetch (`http://localhost:3001/projects`).then(async (response) => {
+        fetch (`${API_URL}/projects`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
 

@@ -1,5 +1,6 @@
 import Style from './Linktree.module.scss'
 import { useEffect, useState } from "react"
+import { API_URL } from '@/Constants.js'
 
 export default function Linktree () {
     const [data, setData] = useState(null)
@@ -7,7 +8,7 @@ export default function Linktree () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch(`http://localhost:3001/socials-networks`).then(async (response) => {
+        fetch(`${API_URL}/socials-networks`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {
