@@ -94,7 +94,7 @@ export default function Projects () {
     return (
         <>
             <section className={Style.Projects}>
-                <h2 className={Style.sectionTitle}>Mes réalisations</h2>
+                <h2 id={`projectsAnchor`} className={Style.sectionTitle}>Mes réalisations</h2>
                 {loading ? (loadingComponent) : error ? (errorsComponent) : (
                     <>
                         <ul className={Style.projectsFilterWrapper}>{tagsFilterElement}</ul>
