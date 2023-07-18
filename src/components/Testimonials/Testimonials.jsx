@@ -27,7 +27,7 @@ export default function Testimonials () {
             {/* <h3 className={Style.jobMeta}>Freelance since 09-2019</h3> */}
         </div>
         <Linktree />
-        <a className={Style.cvDownload} href={data?.cv_url} target="_blank" >
+        <a className={Style.cvDownload} href={data?.cv_url} target="_blank" title="Télécharger mon CV">
             Download my CV
             <span className={Style.icon}>
                 <figure>

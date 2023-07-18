@@ -34,8 +34,8 @@ export default function Projects () {
 
     let renderedData = filteredData ?? data
 
-    const projectsElements = renderedData?.map(element => (
-        <li className={Style.projectElement}>
+    const projectsElements = renderedData?.map((element, index) => (
+        <li className={Style.projectElement} key={index}>
             <img src={element.banner_url} alt="" />
             <div className={Style.cardContent}>
                 <h3 className={Style.cardTitle}>{element.title}</h3>
@@ -94,7 +94,7 @@ export default function Projects () {
     return (
         <>
             <section className={Style.Projects}>
-                <h2 className={Style.sectionTitle}>Mes réalisations</h2>
+                <h2 id={`projectsAnchor`} className={Style.sectionTitle}>Mes réalisations</h2>
                 {loading ? (loadingComponent) : error ? (errorsComponent) : (
                     <>
                         <ul className={Style.projectsFilterWrapper}>{tagsFilterElement}</ul>

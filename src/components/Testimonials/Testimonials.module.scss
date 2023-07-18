@@ -98,13 +98,42 @@
     row-gap: .5em;
 
     p {
-        display: flex;
         position: relative;
         font-size: 1.2em;
-        line-height: 1.5;
+        line-height: 1.7;
         color: var(--foreground);
         font-weight: 400;
         font-family: var(--fofa);
+
+        a {
+            color: var(--tonic);
+            position: relative;
+            transition: color .1s ease;
+            padding: 0 2px;
+
+            &:hover {
+                color: var(--black);
+                transition: color .1s ease;
+
+                &::after {
+                    height: 100%;
+                    border-radius: 3px;
+                    transition: height .1s ease;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: var(--tonic);
+                z-index: -1;
+                transition: height .1s ease;
+            }
+        }
         
         @media screen and (max-width: 450px) {
             padding: 0 1em;
