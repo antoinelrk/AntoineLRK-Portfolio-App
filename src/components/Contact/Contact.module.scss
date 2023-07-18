@@ -1,0 +1,193 @@
+section.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.1em;
+    width: 100%;
+    
+    h2.sectionTitle {
+        margin: 0 auto;
+    }
+
+    p {
+        font-size: 1.15em;
+
+        i {
+            color: var(--tonic);
+            font-weight: 600;
+        }
+    }
+
+    form.contactForm {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        background-color: var(--background-alt);
+        border-radius: .5em;
+        padding: 2em;
+        row-gap: 1em;
+        margin: 0 auto;
+
+        .formGroup {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+
+            input {
+                display: flex;
+                width: 300px;
+                height: 40px;
+                border: solid 2px transparent;
+                border-radius: .5em;
+                background-color: var(--background);
+                outline: none;
+                padding: 0 1em;
+                color: var(--foreground);
+                font-family: "Poppins", sans-serif;
+
+                &:focus {
+                    border-color: var(--tonic);
+                }
+
+                &::placeholder {
+                    color: var(--foreground-alt);
+                }
+            }
+
+            textarea {
+                display: flex;
+                width: 100%;
+                resize: vertical;
+                min-height: 25em;
+                border: solid 2px transparent;
+                border-radius: .5em;
+                background-color: var(--background);
+                padding: 1em;
+                outline: none;
+                color: var(--foreground);
+                font-family: "Poppins", sans-serif;
+
+                &::placeholder {
+                    color: var(--foreground-alt);
+                }
+
+                &:focus {
+                    border-color: var(--tonic);
+                }
+            }
+
+            &.area {
+                margin: 0 0;
+            }
+
+            &.row {
+                flex-direction: row;
+                width: 100%;
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                input[type="checkbox"]:checked + label:after {
+                    transform: translateX(100%);
+                    transition: transform .25s ease;
+                }
+
+                label.checkboxCustom {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    column-gap: .5em;
+                    align-items: center;
+                    cursor: pointer;
+
+                    &:before {
+                        content: '';
+                        position: relative;
+                        width: 56px;
+                        height: 29px;
+                        border-radius: 9999px;
+                        background-color: var(--background);
+
+                        &:focus {
+                            border: solid 3px var(--tonic);
+                        }
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 3px;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 9999px;
+                        transform: translateX(0);
+                        background-color: var(--tonic);
+                        transition: transform .25s ease;
+                    }
+
+                    p {
+                        font-size: 14px;
+
+                        a {
+                            color: var(--tonic);
+                            font-weight: 600;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    button.sendingButton {
+        display: flex;
+        margin: 0 auto;
+        padding: .5em 1em;
+        column-gap: .5em;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background);
+        border-radius: var(--brad-default);
+        transition: background-color .15s ease-in-out;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: var(--foreground);
+
+        &:disabled {
+            background-color: var(--background);
+            cursor: initial;
+            color: var(--foreground-alt);
+
+            .sendButtonIcon figure {
+                fill: var(--foreground-alt);
+            }
+
+            &:hover {
+                background-color: var(--background);
+                transition: none;
+            }
+        }
+
+        &:hover {
+            background-color: var(--tonic);
+            transition: background-color .15s linear;
+        }
+
+        .sendButtonIcon {
+            display: flex;
+            width: 16px;
+            height: 16px;
+
+            figure {
+                display: flex;
+                width: 80%;
+                height: 80%;
+                fill: var(--foreground);
+            }
+        }
+    }
+}
