@@ -2,6 +2,9 @@ section.Projects {
     display: flex;
     flex-direction: column;
     row-gap: 2em;
+    @media screen and (max-width: 1000px) {
+        padding: 0 1em;
+    }
 
     h2.sectionTitle {
         margin: 0 auto;
@@ -60,6 +63,10 @@ section.Projects {
             display: flex;
             flex-direction: column;
             margin: 0 2em;
+        }
+        @media screen and (max-width: 600px) {
+            display: flex;
+            flex-direction: column;
         }
 
         li.projectElement {
