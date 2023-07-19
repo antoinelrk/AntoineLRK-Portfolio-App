@@ -36,6 +36,12 @@ function RootLayout({children}) {
         <html lang="fr">
             <head>
                 <title>Antoine LRK — Web developer</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="description" content="Description du site" />
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="Titre pour les partages" />
+                <meta property="og:description" content="Description des partages sur les réseau" />
+                <meta property="og:image" content="https://static.antoinelrk.com/portfolio/AntoineLRK.webp" />
             </head>
             <body>
                 <div id="app">

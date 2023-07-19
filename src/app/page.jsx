@@ -4,12 +4,14 @@ import Projects from "@/components/Projects/Projects";
 
 export default function Home () {
     return (
-        <main>
-            {/* Section: Model3D */}
-            <Testimonials />
-            <Projects />
-            <EducationsExperiences />
-            {/* Section: Contact */}
-        </main>
+        <>
+            <main>
+                {/* Section: Model3D */}
+                <Testimonials />
+                <Projects />
+                <EducationsExperiences />
+                {/* Section: Contact */}
+            </main>
+        </>
     )
 }
