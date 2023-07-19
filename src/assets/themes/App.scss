@@ -209,14 +209,14 @@ body {
             column-gap: 4px;
             width: 100%;
             max-width: var(--app-width);
-            color: var(--background-alt);
+            color: var(--foreground-alt);
             user-select: none;
 
             .icon {
                 display: flex;
                 width: 13px;
                 height: 13px;
-                fill: var(--background-alt);
+                fill: var(--foreground-alt);
             }
         }
     }
