@@ -2,7 +2,6 @@
 import Style from './Educations.module.scss'
 import { toHumans } from '@/helpers/Date.js'
 import { useEffect, useState } from 'react'
-import { API_URL } from '@/Constants.js'
 
 export default function Educations () {
     const [data, setData] = useState(null)
@@ -10,7 +9,7 @@ export default function Educations () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch (`${API_URL}/educations`).then(async (response) => {
+        fetch (`${process.env.NEXT_PUBLIC_API_URL}/educations`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {
