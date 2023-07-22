@@ -39,9 +39,15 @@ function RootLayout({children}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="description" content="Description du site" />
                 <meta name="robots" content="index, follow" />
-                <meta property="og:title" content="Titre pour les partages" />
-                <meta property="og:description" content="Description des partages sur les réseau" />
+                <meta property="og:title" content="Antoine LRK, développeur web junior" />
+                <meta property="og:description" content="Enthousiaste et passionné par la création d'expériences utilisateur captivantes et la résolution de problèmes techniques. Compétences en HTML, CSS et frameworks JavaScript, à la recherche d'opportunités pour contribuer à des projets innovants et évoluer dans un environnement dynamique." />
                 <meta property="og:image" content="https://static.antoinelrk.com/portfolio/AntoineLRK.webp" />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="Antoine LRK, développeur web junior" />
+                <meta name="twitter:description" content="Enthousiaste et passionné par la création d'expériences utilisateur captivantes et la résolution de problèmes techniques. Compétences en HTML, CSS et frameworks JavaScript, à la recherche d'opportunités pour contribuer à des projets innovants et évoluer dans un environnement dynamique." />
+                <meta name="twitter:image" content="https://static.antoinelrk.com/portfolio/AntoineLRK.webp" />
+                <meta name="twitter:site" content="@antoinelrk" />
+                <meta name="twitter:creator" content="@antoinelrk" />
             </head>
             <body>
                 <div id="app">
