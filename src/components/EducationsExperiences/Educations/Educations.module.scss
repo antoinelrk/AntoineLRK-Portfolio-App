@@ -8,8 +8,12 @@ section.Educations {
 
     @media screen and (max-width: 400px) {
         width: 100%;
+        padding: 0 1em;
     }
     @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 1400px) {
         width: 100%;
     }
 

@@ -2,8 +2,12 @@ section.Projects {
     display: flex;
     flex-direction: column;
     row-gap: 2em;
+
     @media screen and (max-width: 1000px) {
         padding: 0 1em;
+    }
+    @media screen and (max-width: 400px) {
+        padding: 0 0;
     }
 
     h2.sectionTitle {
@@ -62,8 +66,9 @@ section.Projects {
         @media screen and (max-width: 400px) {
             display: flex;
             flex-direction: column;
-            margin: 0 2em;
+            margin: 0 1em;
         }
+
         @media screen and (max-width: 600px) {
             display: flex;
             flex-direction: column;
