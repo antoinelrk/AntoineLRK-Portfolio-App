@@ -81,7 +81,7 @@ export default function Projects () {
         document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
         event.target.classList.add('active')
 
-        setFilteredData(data.filter((item) => item.tags.includes(value)))
+        setFilteredData(value === null ? data : data.filter((item) => item.tags.includes(value)))
         setSelectedTags(value)
     }
 
@@ -97,7 +97,15 @@ export default function Projects () {
                 <h2 id={`projectsAnchor`} className={Style.sectionTitle}>Mes réalisations</h2>
                 {loading ? (loadingComponent) : error ? (errorsComponent) : (
                     <>
-                        <ul className={Style.projectsFilterWrapper}>{tagsFilterElement}</ul>
+                        <ul className={Style.projectsFilterWrapper}>
+                            {tagsFilterElement}
+
+                            {selectedTag !== null && (
+                                <li className={Style.tagListElement}>
+                                    <button onClick={(event) => toggleFilter(event, null)} >Reset</button>
+                                </li>)
+                            }
+                        </ul>
                         <ul className={Style.projectsWrapper}>
                             {projectsElements}
                         </ul>
