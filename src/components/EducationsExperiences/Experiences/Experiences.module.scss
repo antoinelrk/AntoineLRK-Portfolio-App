@@ -1,0 +1,120 @@
+section.Experiences {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    width: 100%;
+    
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+
+    article.card {
+        position: relative;
+        display: flex;
+        width: 75%;
+        color: var(--foreground);
+        font-family: 'DM Sans', sans-serif;
+        column-gap: 1em;
+        padding-bottom: 1em;
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 9999px;
+            background-color: var(--background-alt);
+        }
+
+        aside.companyBrand {
+            display: flex;
+
+            a.companyLink {
+                display: flex;
+                width: 64px;
+                height: 64px;
+                border-radius: 4px;
+                overflow: hidden;
+                border: none;
+                cursor: pointer;
+                
+                img.companyLogo {
+                    display: flex;
+                    width: 100%;
+                    object-position: center center;
+                    object-fit: cover;
+                }
+            }
+        }
+        
+        article.cardContent {
+            display: flex;
+            flex-direction: column;
+            font-family: var(--fofa);
+
+            a.companyLink {
+                display: flex;
+                margin-right: auto;
+                font-size: 1.2em;
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--tonic);
+                    text-decoration: underline;
+                }
+            }
+
+            p.poste {
+                span.postName {
+                    margin-right: 4px;
+                }
+            }
+            
+            p {
+                display: flex;
+
+                &.metadata {
+                    color: var(--foreground-alt);
+                }
+
+                &.description {
+                    color: var(--foreground);
+                    margin-top: .75em;
+                    font-weight: 400;
+                    font-size: 1.2em;
+                    max-width: 75%;
+                }
+            }
+
+            a.certificationLink {
+                display: flex;
+                margin-top: 1em;
+                width: 128px;
+                padding: .5em 1em;
+                background-color: var(--background-alt);
+                border-radius: 4px;
+                transition: background-color .15s ease-in-out;
+                border: none;
+    
+                &:hover {
+                    background-color: var(--tonic);
+                    transition: background-color .15s ease-in-out;
+                }
+            }
+        }
+
+        h3.cardTitle {
+            font-size: 2.8em;
+        }
+    }
+}

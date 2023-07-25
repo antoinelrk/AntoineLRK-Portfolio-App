@@ -1,40 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './Normalize.scss';
+@import './Root.scss';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+::selection {
+    background-color: var(--tonic);
 }
 
-ul li {
-    list-style-type: none;
+body::-webkit-scrollbar {
+    width: 11px;
 }
 
-a, a:hover, a:active, a:visited, a:focus {
-    text-decoration: none;
-    color: white;
-    outline: none;
+body::-webkit-scrollbar-track {
+    background-color: var(--background);
 }
 
-button {
-    background-color: inherit;
-}
-
-:root {
-    --background: #222831;
-    --background-alt: #393e46;
-
-    --color: #fff;
-    --tonic: #00ADB5;
-
-    --brad-default: 4px;
-    --grid-gap: 32px;
-
-    --tv: 1900px;
-    --desktop: 1200px;
-    --tablet: 900px;
-    --phone: 450px;
+body::-webkit-scrollbar-thumb {
+    background-color: var(--background-alt);
+    border: solid 4px var(--background);
+    border-radius: 999px;
+    cursor: pointer;
 }
 
 body {
@@ -43,28 +28,40 @@ body {
     width: 100%;
     height: 100%;
     font-size: 16px;
+    font-family: var(--fofa);
+    background-color: var(--background);
+    color: var(--foreground);
+    align-items: center;
 
     #app {
         display: flex;
         flex-direction: column;
         width: 100%;
         min-height: 100vh;
-        background-color: var(--background);
         align-items: center;
 
         header {
             display: flex;
             padding: 0 1em;
             max-width: var(--desktop);
+            max-width: var(--app-width);
             width: 100%;
             height: 56px;
             justify-content: space-between;
             align-items: center;
+            
+            @media screen and (max-width: 400px) {
+                max-width: 100%;
+            }
+            
+            @media screen and (max-width: 1000px) {
+                max-width: 95%;
+            }
 
             .app-name {
-                font-size: 32px;
+                font-size: 24px;
                 font-weight: 600;
-                color: var(--color);
+                color: var(--foreground);
                 user-select: none;
 
                 span {
@@ -74,7 +71,7 @@ body {
 
             nav {
                 display: flex;
-                height: 100%;
+                height: auto;
                 width: auto;
 
                 ul {
@@ -82,7 +79,93 @@ body {
                     height: 100%;
                     width: auto;
                     align-items: center;
-                    column-gap: 4px;
+                    column-gap: 8px;
+
+                    li {
+                        display: flex;
+
+                        a.NavLink {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            border-radius: var(--brad-default);
+                            padding: 0 12px;
+                            cursor: pointer;
+                            transition: background-color .25s ease;
+                            background-color: transparent;
+                            font-weight: 500;
+                            font-size: 15px;
+                            user-select: none;
+                            color: var(--foreground);
+                        
+                            &:focus {
+                                outline-width: 3px;
+                                outline-color: var(--tonic);
+                                outline-style: solid;
+                                outline-offset: 0;
+                            }
+                        
+                            &:hover {
+                                background-color: var(--background-alt);
+                                transition: background-color .25s ease;
+                            }
+                        }
+
+                        button.ToggleTheme {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            width: 32px;
+                            border-radius: var(--brad-default);
+                            border: none;
+                            color: var(--foreground);
+                            cursor: pointer;
+                            transition: background-color .25s ease;
+                            background-color: transparent;
+                        
+                            &:focus {
+                                outline-width: 3px;
+                                outline-color: var(--tonic);
+                                outline-style: solid;
+                                outline-offset: 0;
+                            }
+
+                            &:active {
+                                .toggle-theme-icon {
+                                    transform: scale(.9);
+                                    transition: transform .1s linear;
+                        
+                                    figure {
+                                        fill: var(--tonic);
+                                    }
+                                }
+                            }
+                        
+                            .toggle-theme-icon {
+                                display: flex;
+                                width: 100%;
+                                height: 100%;
+                                justify-content: center;
+                                align-items: center;
+                                transition: transform .1s linear;
+                        
+                                figure {
+                                    display: flex;
+                                    width: 14px;
+                                    height: 14px;
+                                    fill: var(--foreground);
+                                }
+                            }
+                        
+                            &:hover {
+                                background-color: var(--background-alt);
+                                transition: background-color .25s ease;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -90,10 +173,32 @@ body {
         main {
             display: flex;
             flex-direction: column;
-            max-width: var(--desktop);
             width: 100%;
-            padding: 0 .5em;
+            max-width: var(--app-width);
             min-height: 100%;
+            row-gap: 2em;
+
+            @media screen and (max-width: 400px) {
+                max-width: 100%;
+            }
+            @media screen and (max-width: 1000px) {
+                max-width: 95%;
+            }
+            @media screen and (max-width: 1200px) {
+                max-width: 95%;
+            }
+
+            h2.sectionTitle {
+                display: flex;
+                margin: 0 auto;
+                color: var(--foreground);
+                font-size: 1.6em;
+                user-select: none;
+                
+                @media screen and (max-width: 450px) {
+                    font-size: 1.2em;
+                }
+            }
         }
 
         footer {
@@ -105,14 +210,16 @@ body {
             font-size: 14px;
             font-weight: 600;
             column-gap: 4px;
-            color: var(--background-alt);
+            width: 100%;
+            max-width: var(--app-width);
+            color: var(--foreground-alt);
             user-select: none;
 
             .icon {
                 display: flex;
                 width: 13px;
                 height: 13px;
-                fill: var(--background-alt);
+                fill: var(--foreground-alt);
             }
         }
     }

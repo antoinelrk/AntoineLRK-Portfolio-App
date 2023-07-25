@@ -1,0 +1,54 @@
+article.Linktree {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+
+    ul {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 32px);
+        width: 100%;
+        row-gap: 8px;
+        column-gap: 8px;
+
+        li {
+            display: flex;
+            font-size: 14px;
+
+            a.socialLink, button.socialButton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                padding: 8px;
+                border-radius: var(--brad-default);
+
+                &:focus {
+                    outline-width: 3px;
+                    outline-color: var(--tonic);
+                    outline-style: solid;
+                    outline-offset: 0;
+                }
+
+                &:active {
+                    figure {
+                        transform: scale(.95);
+                        fill: var(--tonic);
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--background-alt);
+                }
+
+                figure {
+                    display: flex;
+                    width: 16px;
+                    height: 16px;
+                    fill: var(--foreground);
+                }
+            }
+        }
+    }
+}

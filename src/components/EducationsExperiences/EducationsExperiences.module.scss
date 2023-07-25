@@ -1,0 +1,88 @@
+section.EducationsExperiences {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1em;
+    
+    h2.sectionTitle {
+        margin: 0 auto;
+    }
+
+    .tabsControls {
+        display: flex;
+        column-gap: 32px;
+        width: 100%;
+        justify-content: center;
+
+        button.tabsButton {
+            border-radius: var(--brad-default);
+            padding: 6px 12px; 
+            color: var(--foreground);
+            font-family: var(--fofa);
+            background-color: var(--background-alt);
+            border: solid 3px transparent;
+            
+            &:focus {
+                border: solid 3px var(--tonic);
+                outline: none;
+            }
+
+            &:hover {
+                background-color: var(--tonic);
+            }
+        }
+    }
+
+    .tabsWrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1em;
+        padding: 5em 0;
+
+        .timelineLayout {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+    
+            .nowCircle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                width: 64px;
+                height: 64px;
+                background-color: var(--background-alt);
+                border: solid 3px var(--tonic);
+                border-radius: 9999px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                height: calc(100% - 100px);
+                background-color: var(--tonic);
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                height: 100px;
+                background: linear-gradient(to bottom, var(--tonic), transparent);
+                z-index: -1;
+            }
+        }
+    }
+}

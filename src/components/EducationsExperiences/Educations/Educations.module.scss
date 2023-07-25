@@ -1,0 +1,136 @@
+section.Educations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 1em;
+    width: 50%;
+    padding: 0 2em;
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+        padding: 0 1em;
+    }
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 1400px) {
+        width: 100%;
+    }
+
+    article.card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: var(--foreground);
+        font-family: 'DM Sans', sans-serif;
+        column-gap: 1em;
+        padding: 2em;
+        border-radius: .5em;
+        background-color: var(--background-alt);
+
+        @media screen and (max-width: 400px) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 2em;
+            padding: 2em;
+        }
+
+        aside.companyBrand {
+            display: flex;
+            
+            @media screen and (max-width: 400px) {
+                margin: 0 auto;
+            }
+
+            a.companyLink {
+                display: flex;
+                width: 128px;
+                height: 128px;
+                border-radius: 1em;
+                overflow: hidden;
+                border: none;
+                cursor: pointer;
+                border: solid 3px transparent;
+                
+                &:focus {
+                    border-color: var(--tonic);
+                }
+
+                img.companyLogo {
+                    display: flex;
+                    width: 100%;
+                    object-position: center center;
+                    object-fit: cover;
+                }
+            }
+        }
+        
+        article.cardContent {
+            display: flex;
+            flex-direction: column;
+            font-family: var(--fofa);
+            align-items: center;
+            margin-top: 1em;
+
+            @media screen and (max-width: 400px) {
+                margin-top: 0;
+            }
+
+            a.companyLink {
+                display: flex;
+                font-size: 1.2em;
+                font-weight: 600;
+                cursor: pointer;
+
+                &:focus {
+                    color: var(--tonic);
+                    text-decoration: underline;
+                }
+
+                &:hover {
+                    color: var(--tonic);
+                    text-decoration: underline;
+                }
+            }
+            
+            p {
+                display: flex;
+
+                &.metadata {
+                    color: var(--foreground-alt);
+                }
+
+                &.description {
+                    color: var(--foreground);
+                    margin-top: .75em;
+                    font-weight: 400;
+                    font-size: 1.2em;
+                    max-width: 100%;
+                }
+            }
+
+            a.certificationLink {
+                display: flex;
+                margin-top: 1em;
+                width: 128px;
+                padding: .5em 1em;
+                background-color: var(--background-alt);
+                border-radius: 4px;
+                transition: background-color .15s ease-in-out;
+                border: none;
+    
+                &:hover {
+                    background-color: var(--tonic);
+                    transition: background-color .15s ease-in-out;
+                }
+            }
+        }
+
+        h3.cardTitle {
+            font-size: 2.8em;
+        }
+    }
+}
