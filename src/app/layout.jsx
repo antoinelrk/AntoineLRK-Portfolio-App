@@ -50,7 +50,7 @@ function RootLayout({children}) {
                         <nav>
                             <ul>
                                 <li><Link className="NavLink" href="/">Home</Link></li>
-                                <li><Link className="NavLink" href="/about">About</Link></li>
+                                {/* <li><Link className="NavLink" href="/about">About</Link></li> */}
                                 <li>
                                     <button name="toggleTheme" className="ToggleTheme" onClick={() => toggleTheme()}>
                                         <div className="toggle-theme-icon">
