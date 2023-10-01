@@ -29,7 +29,7 @@ export default function Educations () {
             <article className={Style.cardContent}>
                 <a className={Style.companyLink} href={element.company_url} target="_blank">{element.company_name}</a>
                 <p className={Style.certification}>{element.title}</p>
-                <p className={Style.metadata}>{toHumans(element.start_at)} à {element.ended_at ? toHumans(element.ended_at) : "aujourd'hui"}</p>
+                <p className={Style.metadata}>{toHumans(element.started_at)} à {element.ended_at ? toHumans(element.ended_at) : "aujourd'hui"}</p>
                 <p className={Style.description}>{element.description}</p>
                 {element.certification_url ? (<a className={Style.certificationLink} target="_blank" href={element.certification_url}>Certification</a>) : ""}
             </article>

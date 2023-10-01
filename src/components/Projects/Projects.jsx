@@ -18,11 +18,11 @@ export default function Projects () {
 
             const tagsSet = new Set()
 
-            dataResponse.map(p => {
-                p.tags.map(tag => tagsSet.add(tag))
-            })
+            // dataResponse.map(p => {
+            //     p.tags.map(tag => tagsSet.add(tag))
+            // })
 
-            setTags(Array.from(tagsSet))
+            // setTags(Array.from(tagsSet))
 
         }).catch((e) => {
             if (e instanceof Error) setError(e.message)
@@ -36,13 +36,13 @@ export default function Projects () {
 
     const projectsElements = renderedData?.map((element, index) => (
         <li className={Style.projectElement} key={index}>
-            <img src={element.banner_url} alt="" />
+            <img src={element.banner} alt="" />
             <div className={Style.cardContent}>
                 <h3 className={Style.cardTitle}>{element.title}</h3>
 
-                <div className={Style.tags}>
+                {/* <div className={Style.tags}>
                     <ul className={Style.tagsList}>{element.tags.map(tag => (<li className={Style.tag}>#{tag}</li>))}</ul>
-                </div>
+                </div> */}
 
                 <p className={Style.cardDescription}>{element.description}</p>
                 <div className={Style.cardActions}>
@@ -59,8 +59,8 @@ export default function Projects () {
                         </a>
                     ) : ""}
 
-                    {element.repo_url ? (
-                        <a href={element.repo_url} target="_blank" className={Style.cardLink}>
+                    {element.repository_url ? (
+                        <a href={element.repository_url} target="_blank" className={Style.cardLink}>
                         Github
                         <div className={Style.cardLinkIcon}>
                             <figure>
@@ -77,19 +77,20 @@ export default function Projects () {
     ))
 
 
-    const toggleFilter = (event, value) => {
-        document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
-        event.target.classList.add('active')
+    // const toggleFilter = (event, value) => {
+    //     document.querySelectorAll('.active').forEach(element => element.classList.remove('active'))
+    //     event.target.classList.add('active')
 
-        setFilteredData(value === null ? data : data.filter((item) => item.tags.includes(value)))
-        setSelectedTags(value)
-    }
+    //     setFilteredData(value === null ? data : data.filter((item) => item.tags.includes(value)))
+    //     setSelectedTags(value)
+    // }
 
-    const tagsFilterElement = tags?.map(tag => (
-        <li className={Style.tagListElement}>
-            <button onClick={(event) => toggleFilter(event, tag)} >{tag}</button>
-        </li>
-    ))
+    // const tagsFilterElement = tags?.map(tag => (
+    //     <li className={Style.tagListElement}>
+    //         <button onClick={(event) => toggleFilter(event, tag)} >{tag}</button>
+    //     </li>
+    // ))
+    const tagsFilterElement = null
 
     return (
         <>
