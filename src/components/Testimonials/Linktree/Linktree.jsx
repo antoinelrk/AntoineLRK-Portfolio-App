@@ -7,7 +7,7 @@ export default function Linktree () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/socials-networks`).then(async (response) => {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/social-networks`).then(async (response) => {
             const dataResponse = await response.json()
             setData(dataResponse)
         }).catch((e) => {
