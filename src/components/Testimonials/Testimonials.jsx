@@ -20,10 +20,11 @@ export default function Testimonials () {
     const loadingComponent = <div>Loading...</div>
     const errorComponent = <div>Error: {error}</div>
     const testimonialsComponent = <>
-        <div className={Style.avatarWrapper}><img src={data?.avatar_url} alt={`Photo d'${data?.name}`} /></div>
+        <div className={Style.avatarWrapper}><img src={data?.avatar} alt={`Photo d'${data?.display_name}`} /></div>
         <div className={Style.textualElements}>
-            <h1 className={Style.name}>{data?.name}</h1>
-            <h2 className={Style.jobName}>{data?.job_title}</h2>
+            <h1 className={Style.name}>{data?.display_name}</h1>
+            <h2 className={Style.jobName}>Développeur web</h2>
+            {/* <h2 className={Style.jobName}>{data?.job_title}</h2> */}
             {/* <h3 className={Style.jobMeta}>Freelance since 09-2019</h3> */}
         </div>
         <Linktree />
