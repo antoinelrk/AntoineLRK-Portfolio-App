@@ -47,7 +47,10 @@ export default function Testimonials () {
             {loading ? (loadingComponent) : error ? (errorComponent) : (testimonialsComponent)}
         </section>
         <section className={Style.Biography}>
-            <h2 className="sectionTitle">Bio</h2>
+            <div className="section-title">
+                <span className="number">01</span>
+                <h2>About me</h2>
+            </div>
             {loading ? (loadingComponent) : error ? (errorComponent) : (bioComponent)}
         </section>
     </>

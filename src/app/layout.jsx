@@ -3,6 +3,7 @@ import '../assets/themes/App.scss'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import React, { useEffect } from 'react'
+import Header from '@/components/Layouts/Header'
 
 function RootLayout({children}) {
     useEffect(() => {

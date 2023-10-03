@@ -39,6 +39,10 @@ body {
         width: 100%;
         min-height: 100vh;
         align-items: center;
+            
+        @media screen and (max-width: 400px) {
+            row-gap: 1.5em;
+        }
 
         header {
             display: flex;
@@ -188,13 +192,31 @@ body {
                 max-width: 95%;
             }
 
-            h2.sectionTitle {
+            .section-title {
+                position: relative;
                 display: flex;
-                margin: 0 auto;
-                color: var(--foreground);
-                font-size: 1.6em;
-                user-select: none;
-                
+                flex-direction: column;
+                width: auto;
+                align-items: center;
+                font-family: "Roboto";
+
+                span.number {
+                    font-size: 8em;
+                    z-index: -1;
+                    font-weight: 900;
+                    color: var(--tonic);
+                    opacity: .4;
+                }
+
+                h2 {
+                    position: absolute;
+                    bottom: 25%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    user-select: none;
+                    font-size: 2em;
+                }
+
                 @media screen and (max-width: 450px) {
                     font-size: 1.2em;
                 }

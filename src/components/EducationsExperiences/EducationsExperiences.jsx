@@ -30,7 +30,10 @@ export default function EducationsExperiences () {
 
     return (
         <section className={Style.EducationsExperiences}>
-            <h2 className={Style.sectionTitle}>Expériences & Formations</h2>
+            <div className="section-title">
+                <span className="number">03</span>
+                <h2>Expériences & Formations</h2>
+            </div>
             <div className={Style.tabsControls}>
                 <button className={`${Style.tabsButton}`} onClick={(event) => toggleTab(event, `experiences`)}>Expériences</button>
                 <button className={`${Style.tabsButton} active`} onClick={(event) => toggleTab(event, `educations`)}>Formations</button>
