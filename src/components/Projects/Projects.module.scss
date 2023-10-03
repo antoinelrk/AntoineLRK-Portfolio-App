@@ -173,6 +173,38 @@ section.Projects {
                                     background-color: var(--tonic);
                                     transition: background-color .15s ease-in-out;
                                 }
+
+                                &.bouncing {
+                                    color: var(--tonic);
+                                    transition: color .15s ease-in-out;
+
+                                    &:hover {
+                                        color: var(--foreground);
+                                        transition: color .15s ease-in-out;
+
+                                        .cardLinkIcon {
+                                            figure {
+                                                animation: bounce 1s linear infinite alternate;
+                                                fill: var(--foreground);
+                                                transition: fill .15s ease-in-out;
+                                            }
+                                        }
+                                    }
+
+                                    .cardLinkIcon {
+                                        figure {
+                                            animation: bounce .4s linear infinite alternate;
+                                            transition: fill .15s ease-in-out;
+                                            fill: var(--tonic);
+                                        }
+                                    }
+                                }
+
+                                @keyframes bounce {
+                                    to {
+                                        transform: scale(1.2);
+                                    }
+                                }
         
                                 .cardLinkIcon {
                                     display: flex;
@@ -180,12 +212,13 @@ section.Projects {
                                     height: 16px;
                                     justify-content: center;
                                     align-items: center;
-        
+
                                     figure {
                                         display: flex;
                                         width: 80%;
                                         height: 80%;
                                         fill: var(--foreground);
+                                        transform: scale(1);
                                     }
                                 }
         
