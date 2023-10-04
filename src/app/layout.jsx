@@ -1,8 +1,9 @@
 "use client"
 import '../assets/themes/App.scss'
-import Link from 'next/link'
 import Cookies from 'js-cookie'
 import React, { useEffect } from 'react'
+import Link from 'next/link'
+import Header from '@/components/Layouts/Header'
 
 function RootLayout({children}) {
     useEffect(() => {

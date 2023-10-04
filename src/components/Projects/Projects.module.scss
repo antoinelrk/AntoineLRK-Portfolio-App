@@ -1,17 +1,14 @@
 section.Projects {
+    position: relative;
     display: flex;
     flex-direction: column;
-    row-gap: 2em;
+    // row-gap: 2em;
 
     @media screen and (max-width: 1000px) {
         padding: 0 1em;
     }
     @media screen and (max-width: 400px) {
         padding: 0 0;
-    }
-
-    h2.sectionTitle {
-        margin: 0 auto;
     }
 
     ul.projectsFilterWrapper {
@@ -58,128 +55,177 @@ section.Projects {
     }
 
     ul.projectsWrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, calc(50% - 1em));
-        column-gap: 2em;
-        row-gap: 2em;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, calc(50% - 1em));
+        // column-gap: 2em;
+        // row-gap: 2em;
+        // overflow: hidden;
+        // background-color: blue;
+        display: flex;
 
-        @media screen and (max-width: 400px) {
-            display: flex;
-            flex-direction: column;
-            margin: 0 1em;
-        }
+        // @media screen and (max-width: 400px) {
+        //     display: flex;
+        //     flex-direction: column;
+        //     margin: 0 1em;
+        // }
 
-        @media screen and (max-width: 600px) {
-            display: flex;
-            flex-direction: column;
-        }
+        // @media screen and (max-width: 600px) {
+        //     display: flex;
+        //     flex-direction: column;
+        // }
 
-        li.projectElement {
+        .Swiper {
             display: flex;
-            flex-direction: column;
-            width: auto;
-            padding: 1.5em;
-            height: auto;
-            background-color: var(--background-alt);
-            border-radius: .5em;
-            transition: border-color .25s ease;
-            
-            border: solid 3px transparent;
-            &:hover {
-                border-color: var(--tonic);
-                transition: border-color .25s ease;
-            }
-            
-            img {
+            width: 100%;
+            border-radius: 1em;
+
+            .SwiperSlide {
                 display: flex;
-                width: 100%;
-                height: auto;
-                aspect-ratio: 16/9;
-                object-fit: cover;
-                border-radius: .5em;
-                filter: drop-shadow(0 8px 16px rgba(black, .15));
-            }
+                border-radius: 1em;
 
-            .cardContent {
-                display: flex;
-                flex-direction: column;
-                margin-top: 1.5em;
-                row-gap: .5em;
-                height: 100%;
-
-                .cardTitle {
+                li.projectElement {
                     display: flex;
-                    margin: 0 auto;
-                    font-size: 22px;
-                }
-
-                .tags {
-                    display: flex;
-                    width: 100%;
-
-                    ul.tagsList {
-                        display: flex;
-                        flex-wrap: wrap;
-                        column-gap: .35em;
-                        row-gap: .35em;
-                        width: 100%;
-
-                        li.tag {
-                            display: flex;
-                            border-radius: 9999px;
-                            font-size: 12px;
-                            opacity: .6;
-                        }
+                    flex-direction: column;
+                    width: auto;
+                    padding: 1.5em;
+                    height: auto;
+                    background-color: var(--background-alt);
+                    border-radius: 1em;
+                    transition: border-color .25s ease;
+                    
+                    border: solid 3px transparent;
+                    &:hover {
+                        border-color: var(--tonic);
+                        transition: border-color .25s ease;
                     }
-                }
-
-                p.cardDescription {
-                    margin: .8em 0;
-                    line-height: 1.8;
-                }
-
-                .cardActions {
-                    display: flex;
-                    margin-top: auto;
-                    column-gap: .5em;
-
-                    a.cardLink {
+                    
+                    img {
                         display: flex;
-                        padding: 6px 12px;
-                        column-gap: .5em;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: var(--background);
-                        border-radius: var(--brad-default);
-                        transition: background-color .15s ease-in-out;
-                
-                        &:focus {
-                            outline-width: 3px;
-                            outline-color: var(--tonic);
-                            outline-style: solid;
-                            outline-offset: 0;
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 16/9;
+                        object-fit: cover;
+                        border-radius: 1em;
+                        filter: drop-shadow(0 8px 16px rgba(black, .15));
+                    }
+        
+                    .cardContent {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 1.5em;
+                        row-gap: .5em;
+                        height: 100%;
+        
+                        .cardTitle {
+                            display: flex;
+                            margin: 0 auto;
+                            font-size: 22px;
                         }
         
-                        &:hover {
-                            background-color: var(--tonic);
-                            transition: background-color .15s ease-in-out;
-                        }
-
-                        .cardLinkIcon {
+                        .tags {
                             display: flex;
-                            width: 16px;
-                            height: 16px;
-                            justify-content: center;
-                            align-items: center;
-
-                            figure {
+                            width: 100%;
+        
+                            ul.tagsList {
                                 display: flex;
-                                width: 80%;
-                                height: 80%;
-                                fill: var(--foreground);
+                                flex-wrap: wrap;
+                                column-gap: .35em;
+                                row-gap: .35em;
+                                width: 100%;
+        
+                                li.tag {
+                                    display: flex;
+                                    border-radius: 9999px;
+                                    font-size: 12px;
+                                    opacity: .6;
+                                }
                             }
                         }
+        
+                        p.cardDescription {
+                            margin: .8em 0;
+                            line-height: 1.8;
+                        }
+        
+                        .cardActions {
+                            display: flex;
+                            margin-top: auto;
+                            column-gap: .5em;
+                            flex-wrap: wrap;
+                            row-gap: .5em;
+        
+                            a.cardLink {
+                                display: flex;
+                                padding: 6px 12px;
+                                column-gap: .5em;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: var(--background);
+                                border-radius: var(--brad-default);
+                                transition: background-color .15s ease-in-out;
+                        
+                                &:focus {
+                                    outline-width: 3px;
+                                    outline-color: var(--tonic);
+                                    outline-style: solid;
+                                    outline-offset: 0;
+                                }
+                
+                                &:hover {
+                                    background-color: var(--tonic);
+                                    transition: background-color .15s ease-in-out;
+                                }
 
+                                &.bouncing {
+                                    color: var(--tonic);
+                                    transition: color .15s ease-in-out;
+
+                                    &:hover {
+                                        color: var(--foreground);
+                                        transition: color .15s ease-in-out;
+
+                                        .cardLinkIcon {
+                                            figure {
+                                                animation: bounce 1s linear infinite alternate;
+                                                fill: var(--foreground);
+                                                transition: fill .15s ease-in-out;
+                                            }
+                                        }
+                                    }
+
+                                    .cardLinkIcon {
+                                        figure {
+                                            animation: bounce .4s linear infinite alternate;
+                                            transition: fill .15s ease-in-out;
+                                            fill: var(--tonic);
+                                        }
+                                    }
+                                }
+
+                                @keyframes bounce {
+                                    to {
+                                        transform: scale(1.2);
+                                    }
+                                }
+        
+                                .cardLinkIcon {
+                                    display: flex;
+                                    width: 16px;
+                                    height: 16px;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    figure {
+                                        display: flex;
+                                        width: 80%;
+                                        height: 80%;
+                                        fill: var(--foreground);
+                                        transform: scale(1);
+                                    }
+                                }
+        
+                            }
+                        }
                     }
                 }
             }
