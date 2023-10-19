@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import EditorComponent from "@/components/EditorComponent"
 
 export default function Projects ({params}) {
     const [loading, setLoading] = useState(false)
@@ -15,11 +16,24 @@ export default function Projects ({params}) {
         }).finally(() => setLoading(false))
     }, [])
 
+    const handleDataSave = (data) => {
+        console.log(data);
+    };
+
     return (
         <>
             <main>
-                {loading ? (<div>Loading...</div>) : (<h1>{project?.title}</h1>)}
-                <img src={project?.banner} alt={project?.title} />
+                {loading ? (<div>Loading...</div>) : (
+                    <>
+                        <h1>{project?.title}</h1>
+                        <img src={project?.banner} alt={project?.title} />
+                        <EditorComponent
+                            onDataSave={handleDataSave}
+                            isEditable={false}
+                            contentData={project?.content}
+                        />
+                    </>
+                )}
             </main>
         </>
     )
