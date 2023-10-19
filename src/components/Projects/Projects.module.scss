@@ -178,11 +178,11 @@ section.Projects {
 
                                 &.bouncing {
                                     color: var(--tonic);
-                                    transition: color .15s ease-in-out;
+                                    transition: color .15s ease-in-out, background-color .15s ease-in-out;
 
                                     &:hover {
                                         color: var(--foreground);
-                                        transition: color .15s ease-in-out;
+                                        transition: color .15s ease-in-out, background-color .15s ease-in-out;
 
                                         .cardLinkIcon {
                                             figure {

@@ -4,6 +4,8 @@ import Cookies from 'js-cookie'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Header from '@/components/Layouts/Header'
+import { BackDecoration } from '@/components/Layers/BackDecoration'
+import { BlurOverlay } from '@/components/Layers/BlurOverlay'
 
 function RootLayout({children}) {
     useEffect(() => {
@@ -52,6 +54,8 @@ function RootLayout({children}) {
             </head>
             <body>
                 <div id="app">
+                    <BackDecoration />
+                    <BlurOverlay />
                     <header>
                         <div className="app-name">Antoine LRK</div>
                         <nav>
