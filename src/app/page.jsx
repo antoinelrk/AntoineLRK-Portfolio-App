@@ -5,7 +5,7 @@ import Projects from "@/components/Projects/Projects";
 export default function Home () {
     return (
         <>
-            <main className="under-grid">
+            <main className="upper-grid">
                 {/* Section: Model3D */}
                 <Testimonials />
                 <Projects />

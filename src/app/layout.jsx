@@ -2,10 +2,10 @@
 import '../assets/themes/App.scss'
 import Cookies from 'js-cookie'
 import React, { useEffect } from 'react'
-import Link from 'next/link'
-import Header from '@/components/Layouts/Header'
-import { BackDecoration } from '@/components/Layers/BackDecoration'
-import { BlurOverlay } from '@/components/Layers/BlurOverlay'
+import { Header } from '@/components/Layers/GridLayout/Header'
+import { BackDecoration } from '@/components/Layers/BackDecoration/BackDecoration'
+import { BlurOverlay } from '@/components/Layers/BlurOverlay/BlurOverlay'
+import { Frame } from '@/components/Layers/Frame/Frame'
 
 function RootLayout({children}) {
     useEffect(() => {
@@ -23,17 +23,6 @@ function RootLayout({children}) {
             document.body.setAttribute('color-theme', Cookies.get('theme'))
         }
     })
-
-    const toggleTheme = () => {
-        const currentTheme = Cookies.get('theme')
-        if (currentTheme === 'dark') {
-            Cookies.set("theme", "light")
-            document.body.setAttribute('color-theme', 'light')
-        } else {
-            Cookies.set("theme", "dark")
-            document.body.setAttribute('color-theme', 'dark')
-        }
-    }
 
     return (
         <html lang="fr">
@@ -56,26 +45,10 @@ function RootLayout({children}) {
                 <div id="app">
                     <BackDecoration />
                     <BlurOverlay />
-                    <header>
-                        <div className="app-name">Antoine LRK</div>
-                        <nav>
-                            <ul>
-                                <li><Link className="NavLink" href="/">Home</Link></li>
-                                {/* <li><Link className="NavLink" href="/about">About</Link></li> */}
-                                <li>
-                                    <button name="toggleTheme" className="ToggleTheme" onClick={() => toggleTheme()}>
-                                        <div className="toggle-theme-icon">
-                                            <figure>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
-                                                    <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
-                                                </svg>
-                                            </figure>
-                                        </div>
-                                    </button>
-                                </li>
-                            </ul>
-                        </nav>
-                    </header>
+                    <Frame />
+                    <main className="under-grid">
+                        <Header />
+                    </main>
                     {children}
                     <footer>
                         <div className="icon">
