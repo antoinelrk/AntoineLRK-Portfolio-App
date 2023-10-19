@@ -1,0 +1,42 @@
+.back-decoration {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    z-index: 1;
+
+    span.circle-top-left {
+        position: absolute;
+        border-radius: 9999px;
+        left: 128px;
+        top: 128px;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(to bottom right, #7800b9a2, #7900b948);
+    }
+
+    span.circle-bottom-right {
+        position: absolute;
+        border-radius: 9999px;
+        bottom: 64px;
+        right: 64px;
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(to bottom right, #7800b9a2, #7900b948);
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 64px;
+            border-radius: 9999px;
+            right: 64px;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to bottom right, #b900ada2, #b9006335);
+        }
+    }
+}

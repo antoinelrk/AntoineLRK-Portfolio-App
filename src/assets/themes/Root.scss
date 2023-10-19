@@ -7,6 +7,7 @@
 
     --desktop: 1200px;
     --app-width: 50%;
+    --desktop-width: 100%;
 
     --fofa: "Poppins", sans-serif;
 
@@ -21,6 +22,8 @@
         --foreground: var(--dforeground);
         --foreground-alt: var(--dforeground-alt);
         --invertedBackground: var(--lbackground-alt);
+
+        --frame-color: var(--dframe-color);
     }
 
     
@@ -31,6 +34,8 @@
         --foreground: var(--lforeground);
         --foreground-alt: var(--lforeground-alt);
         --invertedBackground: var(--dbackground);
+
+        --frame-color: var(--lframe-color);
     }
 
     @media (prefers-color-scheme: light) {
@@ -39,6 +44,8 @@
         --background-alt: var(--lbackground-alt);
         --foreground: var(--lforeground);
         --foreground-alt: var(--lforeground-alt);
+
+        --frame-color: var(--lframe-color);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -47,5 +54,7 @@
         --background-alt: var(--dbackground-alt);
         --foreground: var(--dforeground);
         --foreground-alt: var(--dforeground-alt);
+
+        --frame-color: var(--dframe-color);
     }
 }
