@@ -16,7 +16,7 @@ export default function Linktree () {
     }, [])
 
     const listOfLinks = data?.map(link => (
-        <li>
+        <li key={link.url}>
             <a className={Style.socialLink} href={link.url} target="_blank" title={link.name}>
                 <figure dangerouslySetInnerHTML={{ __html: link.icon }}></figure>
             </a>

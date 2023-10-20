@@ -44,6 +44,7 @@ export default function Projects () {
     const projectsElements = renderedData?.map((element, index) => (
         <SwiperSlide    
             className={Style.SwiperSlide}
+            key={index}
         >
             <li className={Style.projectElement} key={index}>
                 <img src={element.banner} alt="" />
@@ -146,8 +147,8 @@ export default function Projects () {
                                     Scrollbar,
                                     Autoplay
                                 ]}
-                                onSwiper={(swiper) => console.log(swiper)}
-                                onSlideChange={() => console.log('slide change')}
+                                onSwiper={(swiper) => {}}
+                                onSlideChange={() => {}}
                             >
                                 {projectsElements}
                             </Swiper>

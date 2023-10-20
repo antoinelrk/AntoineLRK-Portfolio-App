@@ -10,7 +10,7 @@
     transition: background-color .25s ease;
     background-color: transparent;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 1em;
     user-select: none;
     color: var(--foreground);
 
@@ -22,7 +22,7 @@
     }
 
     &:hover {
-        background-color: var(--background-alt);
+        background-color: var(--frame-color);
         transition: background-color .25s ease;
     }
 }

@@ -37,45 +37,18 @@ header {
             display: flex;
             height: auto;
             width: auto;
+            border: solid 3px var(--frame-color);
+            border-radius: var(--brad-default);
 
             ul {
                 display: flex;
                 height: 100%;
                 width: auto;
                 align-items: center;
-                column-gap: 8px;
+                column-gap: .5em;
 
                 li {
                     display: flex;
-
-                    a.NavLink {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        height: 32px;
-                        border-radius: var(--brad-default);
-                        padding: 0 12px;
-                        cursor: pointer;
-                        transition: background-color .25s ease;
-                        background-color: transparent;
-                        font-weight: 300;
-                        font-size: 15px;
-                        user-select: none;
-                        color: var(--foreground);
-                    
-                        &:focus {
-                            outline-width: 3px;
-                            outline-color: var(--tonic);
-                            outline-style: solid;
-                            outline-offset: 0;
-                        }
-                    
-                        &:hover {
-                            background-color: var(--background-alt);
-                            transition: background-color .25s ease;
-                        }
-                    }
 
                     button.ToggleTheme {
                         display: flex;
