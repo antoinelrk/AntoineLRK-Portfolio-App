@@ -1,0 +1,28 @@
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    border-radius: var(--brad-default);
+    padding: 0 12px;
+    cursor: pointer;
+    transition: background-color .25s ease;
+    background-color: transparent;
+    font-weight: 300;
+    font-size: 15px;
+    user-select: none;
+    color: var(--foreground);
+
+    &:focus {
+        outline-width: 3px;
+        outline-color: var(--tonic);
+        outline-style: solid;
+        outline-offset: 0;
+    }
+
+    &:hover {
+        background-color: var(--background-alt);
+        transition: background-color .25s ease;
+    }
+}
