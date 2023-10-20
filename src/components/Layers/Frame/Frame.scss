@@ -12,7 +12,8 @@
     background: 
         linear-gradient(to right, var(--frame-color)  1px, transparent 1px),
         linear-gradient(to bottom, var(--frame-color) 1px, transparent 1px);
-    background-size: 500px 500px;
+    background-size: 400px 650px !important;
+    background-repeat: repeat;
 
     @media screen and (max-width: 400px) {
         background-size: 300px 300px;
