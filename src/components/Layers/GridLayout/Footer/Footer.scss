@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    margin-top: auto;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    column-gap: 4px;
+    width: 100%;
+    max-width: var(--app-width);
+    color: var(--foreground-alt);
+    user-select: none;
+
+    .icon {
+        display: flex;
+        width: 13px;
+        height: 13px;
+        fill: var(--foreground-alt);
+    }
+}
