@@ -3,7 +3,15 @@ import Link from 'next/link'
 import Cookies from 'js-cookie'
 
 export function Header () {
-    
+    return <header>
+        <div className="centered">
+            <div className="app-name">Antoine LRK</div>
+            <NavComponent />
+        </div>
+    </header>
+}
+
+function NavComponent () {
     const toggleTheme = () => {
         const currentTheme = Cookies.get('theme')
         if (currentTheme === 'dark') {
@@ -15,15 +23,6 @@ export function Header () {
         }
     }
 
-    return <header>
-        <div className="centered">
-            <div className="app-name">Antoine LRK</div>
-            <NavComponent />
-        </div>
-    </header>
-}
-
-function NavComponent () {
     return <nav>
         <ul>
             <li><Link className="NavLink" href="/">Home</Link></li>
