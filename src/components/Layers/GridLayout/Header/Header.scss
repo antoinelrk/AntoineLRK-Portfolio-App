@@ -104,6 +104,11 @@ header {
                     }
                 }
             }
+
+            @media screen and (max-width: 400px) {
+                border: none;
+                border-radius: none;
+            }
         }
     }
 }
