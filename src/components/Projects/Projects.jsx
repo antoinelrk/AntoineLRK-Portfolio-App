@@ -140,7 +140,7 @@ export default function Projects () {
                                 autoplay={{
                                     delay: 10000,
                                     disableOnInteraction: false,
-                                 }}
+                                }}
                                 modules={[
                                     Navigation,
                                     Pagination,

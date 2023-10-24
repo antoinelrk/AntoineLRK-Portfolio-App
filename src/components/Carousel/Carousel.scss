@@ -1,0 +1,45 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+    .Swiper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        .swiper-wrapper {
+            display: flex;
+            width: 10000%;
+        }
+
+        .SwiperSlide {
+            display: flex;
+            overflow: hidden;
+
+            img {
+                display: flex;
+                object-position: center;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 16 / 9;
+            }
+
+            /* TODO: Faire un conteneur absolu */
+
+            span.wip {
+                position: absolute;
+                display: flex;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                font-size: 4em;
+                z-index: 99;
+                color: var(--tonic);
+                filter: drop-shadow(6px 6px 3px rgba(black, .25));
+            }
+        }
+    }
+}

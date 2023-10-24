@@ -1,6 +1,7 @@
 import Testimonials from "@/components/Testimonials/Testimonials"
 import EducationsExperiences from "@/components/EducationsExperiences/EducationsExperiences";
 import Projects from "@/components/Projects/Projects";
+import { Carousel } from "@/components/Carousel/Carousel"
 
 export default function Home () {
     return (
@@ -8,7 +9,8 @@ export default function Home () {
             <main className="upper-grid">
                 {/* Section: Model3D */}
                 <Testimonials />
-                <Projects />
+                {/* <Projects /> */}
+                <Carousel />
                 <EducationsExperiences />
                 {/* Section: Contact */}
             </main>
