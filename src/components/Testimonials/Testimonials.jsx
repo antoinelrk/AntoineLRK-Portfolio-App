@@ -1,6 +1,5 @@
 "use client"
 import Style from './Testimonials.module.scss'
-import Linktree from './Linktree/Linktree.jsx'
 import { useEffect, useState } from 'react'
 
 export default function Testimonials () {
@@ -27,7 +26,6 @@ export default function Testimonials () {
             {/* <h2 className={Style.jobName}>{data?.job_title}</h2> */}
             {/* <h3 className={Style.jobMeta}>Freelance since 09-2019</h3> */}
         </div>
-        <Linktree />
         {/* <a className={Style.cvDownload} href={data?.cv_url} target="_blank" title="Télécharger mon CV"> */}
         <a className={Style.cvDownload} href="https://static.antoinelrk.com/portfolio/LRK_ANTOINE_CV_20_09_2023.pdf" target="_blank" title="Télécharger mon CV">
             Download my CV
