@@ -14,7 +14,7 @@ export function Carousel () {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        fetch (`${process.env.NEXT_PUBLIC_API_URL}/projects`).then(async (response) => {
+        fetch (`${process.env.NEXT_PUBLIC_API_URL}/projects?limit=6`).then(async (response) => {
             setProjects(await response.json())
         }).catch((e) => {
             if (e instanceof Error) setError(e.message)
