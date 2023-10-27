@@ -27,7 +27,7 @@ export default function Testimonials () {
             {/* <h3 className={Style.jobMeta}>Freelance since 09-2019</h3> */}
         </div>
         {/* <a className={Style.cvDownload} href={data?.cv_url} target="_blank" title="Télécharger mon CV"> */}
-        <a className={Style.cvDownload} href="https://static.antoinelrk.com/portfolio/LRK_ANTOINE_CV_20_09_2023.pdf" target="_blank" title="Télécharger mon CV">
+        <a className={Style.cvDownload} href="https://static.antoinelrk.com/portfolio/CV_LRK_ANTOINE.pdf" target="_blank" title="Télécharger mon CV">
             Download my CV
             <span className={Style.icon}>
                 <figure>
